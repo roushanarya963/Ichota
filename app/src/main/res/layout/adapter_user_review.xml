@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+
+     <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/user_rvw_lst"
+        android:layout_marginTop="10dp"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/iv_user"
+                android:layout_width="70dp"
+                android:layout_height="0dp"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="20dp"
+                android:scaleType="centerCrop"
+                android:src="@drawable/ic_user"
+                app:layout_constraintDimensionRatio="1:1"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:shapeAppearanceOverlay="@style/ShapeAppearance.App.SmallComponents_round_16" />
+
+            <LinearLayout
+                android:id="@+id/linearlayout_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="36dp"
+                android:orientation="vertical"
+                app:layout_constraintBottom_toBottomOf="@+id/iv_user"
+                app:layout_constraintStart_toEndOf="@+id/iv_user"
+                app:layout_constraintTop_toTopOf="@+id/iv_user"
+                app:layout_constraintVertical_bias="0.0"
+                tools:ignore="MissingConstraints">
+
+                <TextView
+                    android:id="@+id/tv_name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="4dp"
+                    android:layout_marginEnd="80dp"
+                    android:fontFamily="@font/sf_pro_display_regular"
+                    android:textStyle="bold"
+                    app:layout_constraintTop_toTopOf="@+id/iv_user"
+                    tools:ignore="MissingConstraints"
+                    tools:text="Samantha Panalillio" />
+
+                <!--<RatingBar
+                android:id="@+id/rb_user"
+                style="@style/Widget.AppCompat.RatingBar.Small"
+                android:layout_width="0dp"
+                android:layout_height="20dp"
+                android:layout_marginEnd="16dp"
+                android:progressTint="@color/colorOrangeRating"
+                android:rating="4"
+                app:layout_constraintBottom_toBottomOf="@+id/iv_user"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/iv_user"
+                app:layout_constraintVertical_bias="0.233" />-->
+
+                <TextView
+                    android:id="@+id/tv_user_description"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="4dp"
+                    android:fontFamily="@font/sf_pro_display_regular"
+                    android:text="But i must expalin to you"
+                    app:layout_constraintStart_toStartOf="@+id/tv_name"
+                    app:layout_constraintTop_toBottomOf="@+id/tv_name" />
+
+                <TextView
+                    android:id="@+id/tv_review_date"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/sf_pro_display_regular"
+                    android:text="Feb 25 2021"
+                    app:layout_constraintBottom_toBottomOf="@+id/iv_user"
+                    app:layout_constraintStart_toStartOf="@+id/tv_user_description"
+                    app:layout_constraintTop_toBottomOf="@+id/tv_user_description" />
+
+            </LinearLayout>
+
+            <RatingBar
+                android:id="@+id/rb_user"
+                style="@style/Widget.AppCompat.RatingBar.Small"
+                android:layout_width="0dp"
+                android:layout_height="20dp"
+                android:layout_marginEnd="16dp"
+                android:progressTint="@color/colorOrangeRating"
+                android:rating="4"
+                app:layout_constraintBottom_toBottomOf="@+id/linearlayout_tv"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/linearlayout_tv"
+                app:layout_constraintVertical_bias="0.233" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.cardview.widget.CardView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

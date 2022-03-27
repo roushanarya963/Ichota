@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    tools:context=".dialogs.AddPaymentMethodDialogFragment">
+
+    <TextView
+        android:id="@+id/tv_payment_name"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:fontFamily="@font/sf_pro_display_semibold"
+        android:textAppearance="@style/TextAppearance.MaterialComponents.Body1"
+        android:textColor="@color/colorTextPrimary"
+        app:layout_constraintEnd_toStartOf="@+id/gl_end"
+        app:layout_constraintStart_toStartOf="@+id/gl_start"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:text="Venmo" />
+
+
+    <EditText
+        android:id="@+id/et_payment_url"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/sf_pro_display_regular"
+        android:hint="@string/paymentUrl"
+        android:layout_marginTop="32dp"
+        android:textAppearance="@style/TextAppearance.MaterialComponents.Body2"
+        android:textColor="@color/colorTextPrimary"
+        app:layout_constraintEnd_toStartOf="@+id/gl_end"
+        app:layout_constraintStart_toStartOf="@+id/gl_start"
+        app:layout_constraintTop_toBottomOf="@+id/tv_payment_name" />
+
+
+    <Button
+        android:id="@+id/bt_continue"
+        android:layout_width="0dp"
+        android:layout_height="60dp"
+        android:layout_marginTop="24dp"
+        android:layout_marginBottom="16dp"
+        android:text="@string/Continue"
+        android:textAppearance="@style/TextAppearance.MaterialComponents.Body1"
+        android:textColor="@color/colorWhite"
+        android:fontFamily="@font/sf_pro_display_medium"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/gl_end"
+        app:layout_constraintStart_toStartOf="@+id/gl_start"
+        app:layout_constraintTop_toBottomOf="@+id/et_payment_url"
+        app:shapeAppearance="@style/ShapeAppearance.App.Image_round_16" />
+
+
+    <ProgressBar
+        android:id="@+id/progress_bar"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:elevation="4dp"
+        android:indeterminate="true"
+        android:visibility="gone"
+
+        android:indeterminateTint="@color/colorWhite"
+        app:layout_constraintBottom_toBottomOf="@+id/bt_continue"
+        app:layout_constraintEnd_toEndOf="@+id/bt_continue"
+        app:layout_constraintHorizontal_bias="0.67"
+        app:layout_constraintStart_toStartOf="@+id/bt_continue"
+        app:layout_constraintTop_toTopOf="@+id/bt_continue" />
+
+
+
+
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/gl_start"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_begin="16dp" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/gl_end"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_end="16dp" />
+</androidx.constraintlayout.widget.ConstraintLayout>

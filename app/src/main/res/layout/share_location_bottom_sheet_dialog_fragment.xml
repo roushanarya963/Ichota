@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".dialogs.ShareLocationBottomSheetDialog">
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        tools:ignore="MissingConstraints">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/cons_alert"
+            android:background="@drawable/bg_bottom_constraint_lyt"
+            android:layout_marginStart="20dp"
+            android:layout_marginEnd="20dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <TextView
+                android:id="@+id/tv_alert"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/alert"
+                android:fontFamily="@font/sf_pro_display_regular"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                />
+            <TextView
+                android:id="@+id/tv_private_info_desc"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/sf_pro_display_regular"
+                android:text="@string/txt_private_info_lk"
+                app:layout_constraintTop_toBottomOf="@+id/tv_alert"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                />
+            <TextView
+                android:id="@+id/tv_imp_roll"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/sf_pro_display_regular"
+                android:text="@string/txt_important_role"
+                app:layout_constraintTop_toBottomOf="@+id/tv_private_info_desc"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/tv_may_effect"
+                android:fontFamily="@font/sf_pro_display_regular"
+                android:text="@string/txt_may_affects_you"
+                app:layout_constraintTop_toBottomOf="@+id/tv_imp_roll"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/tv_location"
+                android:text="@string/txt_location"
+                android:fontFamily="@font/sf_pro_display_regular"
+                app:layout_constraintTop_toBottomOf="@+id/tv_may_effect"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                />
+            <View
+                android:id="@+id/vv_one"
+                app:layout_constraintTop_toBottomOf="@+id/tv_location"
+                android:layout_width="wrap_content"
+                android:layout_marginTop="10dp"
+                android:layout_height="1.5sp"
+                android:background="@color/colorGrey200"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                />
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/btn_share_location"
+                android:backgroundTint="@color/colorWhite"
+                android:text="@string/shareLocation"
+                android:background="@null"
+                android:textAppearance="@style/TextAppearance.MaterialComponents.Headline5"
+                android:textColor="@color/colorConditionFair"
+                android:textAllCaps="false"
+                app:layout_constraintTop_toBottomOf="@+id/vv_one"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:id="@+id/btn_cancel"
+            android:layout_marginEnd="20dp"
+            android:layout_marginStart="20dp"
+            android:backgroundTint="@color/colorWhite"
+            android:textColor="@color/colorBlack"
+            app:shapeAppearance="@style/ShapeAppearance.App.Image_round_16"
+            android:textAppearance="@style/TextAppearance.MaterialComponents.Headline5"
+            android:fontFamily="@font/sf_pro_display_regular"
+            android:text="@string/cancel"
+            />
+
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

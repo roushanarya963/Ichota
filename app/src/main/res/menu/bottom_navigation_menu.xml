@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <group android:checkableBehavior="single">
+        <item android:id="@+id/nav_graph_home"
+            android:title="@string/home"
+            android:icon="@drawable/ic_home" />
+
+        <item android:id="@+id/nav_graph_message"
+            android:title="@string/message"
+            android:icon="@drawable/ic_message" />
+
+        <item android:id="@+id/nav_post_options_fragment"
+            android:title="@string/addPost"
+            android:icon="@drawable/ic_capture" />
+
+        <item android:id="@+id/nav_notification_fragment"
+            android:title="@string/notification"
+            android:icon="@drawable/ic_bell" />
+
+
+        <item android:id="@+id/nav_account_fragment"
+            android:title="@string/account"
+            android:icon="@drawable/ic_user" />
+
+    </group>
+
+</menu>

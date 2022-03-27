@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_marginStart="16dp"
+    android:layout_marginTop="4dp"
+    android:layout_marginEnd="16dp"
+    android:layout_marginBottom="4dp"
+    app:cardBackgroundColor="@color/colorWhite"
+    app:cardCornerRadius="16dp"
+    app:cardElevation="4dp">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="8dp">
+
+
+        <com.google.android.material.imageview.ShapeableImageView
+            android:id="@+id/iv_ad"
+            android:layout_width="90dp"
+            android:layout_height="0dp"
+            android:scaleType="centerCrop"
+            tools:src="@drawable/app_logo"
+            app:layout_constraintDimensionRatio="1:1"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:shapeAppearanceOverlay="@style/ShapeAppearance.App.SmallComponents_round_16" />
+
+
+        <TextView
+            android:id="@+id/tv_ad_time"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:fontFamily="@font/sf_pro_display_regular"
+            tools:text="2 hours ago"
+            android:textAppearance="@style/TextAppearance.MaterialComponents.Caption"
+            android:textColor="@color/colorPrimary"
+            app:layout_constraintStart_toEndOf="@+id/iv_ad"
+            app:layout_constraintTop_toTopOf="@+id/iv_ad" />
+
+        <View
+            android:id="@+id/view_dot"
+            android:layout_width="4dp"
+            android:layout_height="4dp"
+            android:layout_marginStart="8dp"
+            android:background="@drawable/bg_circle_orange"
+            android:backgroundTint="@color/colorPrimary"
+            app:layout_constraintBottom_toBottomOf="@+id/tv_ad_time"
+            app:layout_constraintStart_toEndOf="@+id/tv_ad_time"
+            app:layout_constraintTop_toTopOf="@+id/tv_ad_time"
+            android:visibility="gone"/>
+
+        <TextView
+            android:id="@+id/tv_last_bid_price"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:fontFamily="@font/sf_pro_display_medium"
+            tools:text="$340 last bid"
+            android:visibility="gone"
+            android:textAppearance="@style/TextAppearance.MaterialComponents.Caption"
+            android:textColor="@color/colorPrimary"
+            app:layout_constraintBottom_toBottomOf="@+id/tv_ad_time"
+            app:layout_constraintStart_toEndOf="@+id/view_dot"
+            app:layout_constraintTop_toTopOf="@+id/tv_ad_time" />
+
+
+        <TextView
+            android:id="@+id/tv_ad_title"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/sf_pro_display_semibold"
+            android:textAppearance="@style/TextAppearance.MaterialComponents.Body2"
+            android:textColor="@color/colorTextPrimary"
+            app:layout_constraintEnd_toStartOf="@+id/tv_menu"
+            app:layout_constraintStart_toStartOf="@+id/tv_ad_time"
+            app:layout_constraintTop_toBottomOf="@+id/tv_ad_time"
+            tools:text="Used Iphone X for sale 256 GB without Charger?" />
+
+        <TextView
+            android:id="@+id/tv_ad_price"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/sf_pro_display_semibold"
+            tools:text="$625"
+            android:textAppearance="@style/TextAppearance.MaterialComponents.Headline6"
+            android:textColor="@color/colorPrimary"
+            app:layout_constraintStart_toStartOf="@+id/tv_ad_time"
+            app:layout_constraintTop_toBottomOf="@+id/tv_ad_title" />
+
+        <TextView
+            android:id="@+id/tv_header_by_out_price"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/sf_pro_display_regular"
+            android:text="buy out price"
+            android:visibility="invisible"
+            android:textAppearance="@style/TextAppearance.MaterialComponents.Caption"
+            android:textColor="@color/colorPrimary"
+            app:layout_constraintBaseline_toBaselineOf="@+id/tv_ad_price"
+            app:layout_constraintEnd_toStartOf="@+id/tv_menu"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toEndOf="@+id/tv_ad_price" />
+
+
+        <View
+            android:id="@+id/view"
+            android:layout_width="0dp"
+            android:layout_height="0.5dp"
+            android:layout_marginTop="4dp"
+            android:layout_marginEnd="16dp"
+            android:background="@color/colorDivider"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/tv_ad_price"
+            app:layout_constraintTop_toBottomOf="@+id/tv_ad_price" />
+
+        <TextView
+            android:id="@+id/tv_status_header"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:fontFamily="@font/sf_pro_display_medium"
+            android:text="@string/status"
+            android:visibility="visible"
+            android:textAppearance="@style/TextAppearance.MaterialComponents.Caption"
+            android:textColor="@color/colorTextPrimary"
+            app:layout_constraintStart_toStartOf="@+id/view"
+            app:layout_constraintTop_toBottomOf="@+id/view" />
+
+        <TextView
+            android:id="@+id/tv_status"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:visibility="visible"
+            android:fontFamily="@font/sf_pro_display_medium"
+            android:textAppearance="@style/TextAppearance.MaterialComponents.Caption"
+            android:textColor="@color/colorOrangeRating"
+            app:layout_constraintEnd_toEndOf="@+id/tv_header_by_out_price"
+            app:layout_constraintStart_toEndOf="@+id/tv_status_header"
+            app:layout_constraintTop_toTopOf="@+id/tv_status_header"
+            tools:text="Active" />
+
+        <TextView
+            android:id="@+id/tv_menu"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/menuDots"
+            android:padding="8dp"
+            android:background="?selectableItemBackgroundBorderless"
+            android:textAppearance="@style/TextAppearance.MaterialComponents.Headline5"
+            android:fontFamily="@font/sf_pro_display_bold"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.cardview.widget.CardView>

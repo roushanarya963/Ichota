@@ -1,0 +1,314 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:focusable="true">
+
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/app_bar_layout"
+        style="@style/Widget.MaterialComponents.AppBarLayout.Surface"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/tv_title"
+                android:layout_width="0dp"
+                android:layout_height="?actionBarSize"
+                android:fontFamily="@font/sf_pro_display_bold"
+                android:gravity="center"
+                android:text="@string/message"
+                android:textAppearance="@style/TextAppearance.MaterialComponents.Body2"
+                android:textColor="@color/colorTextPrimary"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+
+            <com.google.android.material.floatingactionbutton.FloatingActionButton
+                android:id="@+id/fab_back"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:hapticFeedbackEnabled="true"
+                android:src="@drawable/ic_back"
+                app:backgroundTint="@color/colorPrimary"
+                app:borderWidth="0dp"
+                app:fabCustomSize="28dp"
+                app:fabSize="mini"
+                app:layout_constraintBottom_toBottomOf="@+id/tv_title"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/tv_title"
+                app:maxImageSize="16dp"
+                app:tint="@color/colorWhite" />
+
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/iv_user"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_marginStart="16dp"
+                android:scaleType="centerCrop"
+                android:src="@drawable/img_user_placeholder"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tv_title" />
+
+            <TextView
+                android:id="@+id/tv_user_name"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="8dp"
+                android:fontFamily="@font/sf_pro_display_bold"
+                android:gravity="start"
+                android:textAppearance="@style/TextAppearance.MaterialComponents.Body1"
+                android:textColor="@color/colorTextPrimary"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toEndOf="@+id/iv_user"
+                app:layout_constraintTop_toBottomOf="@+id/fab_back"
+                tools:text="User" />
+
+
+            <ImageView
+                android:id="@+id/iv_online_indicator"
+                android:layout_width="6dp"
+                android:layout_height="6dp"
+                android:layout_marginStart="5dp"
+                android:background="@drawable/bg_circle_orange"
+                android:backgroundTint="@color/colorTextSecondary"
+                app:layout_constraintBottom_toBottomOf="@+id/tv_user_name"
+                app:layout_constraintStart_toEndOf="@+id/tv_user_name"
+                app:layout_constraintTop_toTopOf="@+id/tv_user_name"
+                tools:ignore="MissingConstraints" />
+
+            <TextView
+                android:id="@+id/tv_online_status"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="5dp"
+                android:fontFamily="@font/sf_pro_display_regular"
+                android:gravity="start"
+                android:text="Offline"
+                android:textAppearance="@style/TextAppearance.MaterialComponents.Caption"
+                android:textColor="@color/colorTextSecondary"
+                app:layout_constraintBottom_toBottomOf="@+id/tv_user_name"
+                app:layout_constraintStart_toEndOf="@+id/iv_online_indicator"
+                app:layout_constraintTop_toTopOf="@+id/tv_user_name" />
+
+            <ImageView
+                android:id="@+id/iv_rating"
+                android:layout_width="16dp"
+                android:layout_height="16dp"
+                android:layout_marginTop="10dp"
+                android:src="@drawable/ic_star_fill"
+                app:layout_constraintStart_toStartOf="@+id/tv_user_name"
+                app:layout_constraintTop_toBottomOf="@+id/tv_user_name" />
+
+
+            <TextView
+                android:id="@+id/tv__avg_rating"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="5dp"
+                android:fontFamily="@font/sf_pro_display_regular"
+                android:gravity="start"
+                android:text="4.2"
+                android:textAppearance="@style/TextAppearance.MaterialComponents.Caption"
+                android:textColor="@color/colorTextSecondary"
+                app:layout_constraintBottom_toBottomOf="@+id/iv_rating"
+                app:layout_constraintStart_toEndOf="@+id/iv_rating"
+                app:layout_constraintTop_toTopOf="@+id/iv_rating"
+                app:layout_constraintVertical_bias="1.0" />
+
+            <TextView
+                android:id="@+id/tv__cnt_rating"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/sf_pro_display_regular"
+                android:text="(289)"
+                android:textAppearance="@style/TextAppearance.MaterialComponents.Caption"
+                android:textColor="@color/colorTextSecondary"
+                app:layout_constraintBottom_toBottomOf="@+id/tv__avg_rating"
+                app:layout_constraintStart_toEndOf="@+id/tv__avg_rating"
+                app:layout_constraintTop_toTopOf="@+id/tv__avg_rating"
+                app:layout_constraintVertical_bias="1.0" />
+
+            <com.google.android.material.imageview.ShapeableImageView
+                android:id="@+id/iv_product"
+                android:layout_width="50dp"
+                android:layout_height="?actionBarSize"
+                android:layout_marginEnd="30sp"
+                android:scaleType="fitXY"
+                android:src="@drawable/app_logo"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/tv_user_name"
+                app:shapeAppearanceOverlay="@style/ShapeAppearance.App.SmallComponents_round_8" />
+
+            <!--<androidx.cardview.widget.CardView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                app:layout_constraintEnd_toEndOf="@+id/iv_product"
+                app:layout_constraintStart_toStartOf="@+id/iv_product"
+                app:layout_constraintTop_toBottomOf="@+id/iv_product"
+                tools:ignore="MissingConstraints">-->
+
+            <TextView
+                android:id="@+id/txtactlprc"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/sf_pro_display_bold"
+                android:gravity="center"
+                android:text="$0"
+                android:maxLines="1"
+                android:scrollHorizontally="true"
+                android:ellipsize="end"
+                android:singleLine="true"
+                android:textColor="@color/colorTextPrimary"
+                app:layout_constraintEnd_toEndOf="@+id/iv_product"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="@+id/iv_product"
+                app:layout_constraintTop_toBottomOf="@+id/iv_product" />
+            <!-- </androidx.cardview.widget.CardView>-->
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </com.google.android.material.appbar.AppBarLayout>
+
+
+
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rv_chat"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:clipToPadding="false"
+        android:orientation="vertical"
+        android:paddingTop="8dp"
+        android:paddingBottom="16dp"
+        tools:itemCount="4"
+        tools:listitem="@layout/layout_message_image"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        app:layout_constraintBottom_toTopOf="@+id/et_message"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/app_bar_layout" />
+
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/fab_location"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:src="@drawable/ic_user_location"
+        app:backgroundTint="@color/colorPrimary"
+        app:borderWidth="0dp"
+        app:fabCustomSize="32dp"
+        app:fabSize="mini"
+        app:layout_constraintBottom_toBottomOf="@+id/et_message"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/rv_chat"
+        app:maxImageSize="18dp"
+        app:shapeAppearanceOverlay="@style/ShapeAppearance.App.SmallComponents_round_8"
+        app:tint="@color/colorWhite" />
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/fab_attachment"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ic_attach"
+        app:backgroundTint="@color/colorPrimary"
+        app:borderWidth="0dp"
+        app:fabCustomSize="32dp"
+        app:fabSize="mini"
+        app:layout_constraintBottom_toBottomOf="@+id/fab_location"
+        app:layout_constraintStart_toEndOf="@+id/fab_location"
+        app:layout_constraintTop_toTopOf="@+id/fab_location"
+        app:maxImageSize="18dp"
+        app:shapeAppearanceOverlay="@style/ShapeAppearance.App.SmallComponents_round_8"
+        app:tint="@color/colorWhite" />
+
+
+    <EditText
+        android:id="@+id/et_message"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:background="@drawable/bg_et_search"
+        android:backgroundTint="@color/colorGrey300"
+        android:gravity="start"
+        android:maxHeight="70dp"
+        android:hint="@string/saySomething"
+        android:text=""
+        android:paddingEnd="52dp"
+        android:paddingStart="8dp"
+        android:paddingTop="12dp"
+        android:paddingBottom="12dp"
+        android:textAppearance="@style/TextAppearance.MaterialComponents.Body2"
+        android:textColor="@color/colorTextPrimary"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/guideline3"
+        app:layout_constraintStart_toEndOf="@+id/fab_attachment" />
+
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/fab_send"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ic_send_2"
+        app:backgroundTint="@color/colorPrimary"
+        app:borderWidth="0dp"
+        app:fabCustomSize="32dp"
+        app:fabSize="mini"
+        app:layout_constraintBottom_toBottomOf="@+id/et_message"
+        app:layout_constraintEnd_toEndOf="@+id/et_message"
+        app:layout_constraintTop_toTopOf="@+id/et_message"
+        app:maxImageSize="18dp"
+        app:shapeAppearanceOverlay="@style/ShapeAppearance.App.SmallComponents_round_8"
+        app:tint="@color/colorWhite" />
+
+    <ImageView
+        android:id="@+id/iv_no_messages"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toTopOf="@+id/et_message"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:visibility="gone"
+        app:layout_constraintTop_toBottomOf="@+id/app_bar_layout" />
+
+
+    <ProgressBar
+        android:id="@+id/progress_bar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:indeterminate="true"
+        android:indeterminateTint="@color/colorPrimary"
+        app:layout_constraintBottom_toTopOf="@+id/et_message"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/app_bar_layout" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/gl_start"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_begin="16dp" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_end="16dp" />
+</androidx.constraintlayout.widget.ConstraintLayout>

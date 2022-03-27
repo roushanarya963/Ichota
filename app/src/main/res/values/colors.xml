@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#1167B1</color>
+    <color name="colorPrimaryDark">#FFFFFF</color>
+    <color name="colorAccent">#03DAC5</color>
+    <color name="colorBlueSplash">#1167B1</color>
+    <color name="colorBackground">#FAFAFA</color>
+
+    <color name="colorBlack900">#212121</color>
+    <color name="colorBlack">#000000</color>
+    <color name="colorBlack800">#424242</color>
+    <color name="colorWhite">#FFFFFF</color>
+    <color name="colorBlue900">#0D47A1</color>
+    <color name="colorTextPrimary">#2D2D2F</color>
+    <color name="colorTextSecondary">#8A000000</color>
+    <color name="colorTextHint">#61000000</color>
+
+    <!--color grey-->
+    <color name="ColorGrey100">#F5F5F5</color>
+    <color name="colorGrey300">#E0E0E0</color>
+    <color name="colorGrey600">#757575</color>
+    <color name="colorGrey200">#EEEEEE</color>
+    <color name="colorGrey_200_opacity_50">#80EEEEEE</color>
+
+
+
+    //onBoarding
+    <color name="colorTxtSkip">#80000000</color>
+    <color name="colorBtFillBack">#F2F2F2</color>
+    <color name="colorBtBorderBack">#CCCCCC</color>
+    <color name="colorBtBackTxt">#999999</color>
+
+
+
+    <color name="colorRed500">#F44336</color>
+    <color name="colorShadow">#73000000</color>
+    <color name="colorShadowHome">#26000000</color>
+    <color name="colorTabNormal">#999999</color>
+
+
+    //search Fragment
+    <color name="colorBtFilter">#E9E9E9</color>
+
+    //filter
+    <color name="colorDivider">#E6E6E7</color>
+
+    //location dialog
+    <color name="colorLocationSubHeader">#787979</color>
+
+    //sliders
+    <color name="colorTrackInactive">#F6F6F6</color>
+
+
+    //Account Fragment
+    <color name="colorImageBorder">#D6D6E5</color>
+    <color name="colorDividerAccount">#E6E6E7</color>
+    <color name="colorBgAccount">#F5F5F5</color>
+    <color name="colorOrangeRating">#FA9623</color>
+
+    //login
+
+    <color name="colorGoogle">#DD4B39</color>
+    <color name="colorFacebook">#3B5998</color>
+
+    //menu
+
+    <color name="colorBottomMenuNormal">#707070</color>
+    <color name="colorActiveGreen">#11FA00</color>
+
+
+    <color name="color_outline_blue">#0683FF</color>
+    <color name="color_tranaparant_color">#00000000</color>
+    <color name="colorMapCircle">#3D1167B1</color>
+
+
+    <color name="colorConditionNew">#76FF03</color>
+    <color name="colorConditionLikeNew">#00C853</color>
+    <color name="colorConditionGood">#FF6D00</color>
+    <color name="colorConditionFair">#FF5722</color>
+    <color name="colorConditionBad">#DD2C00</color>
+
+
+
+
+    <color name="multiple_image_select_primary">#673AB7</color>
+    <color name="multiple_image_select_primaryDark">#512DA8</color>
+    <color name="multiple_image_select_primaryLight">#D1C4E9</color>
+    <color name="multiple_image_select_accent">#536DFE</color>
+    <color name="multiple_image_select_primaryText">#212121</color>
+    <color name="multiple_image_select_secondaryText">#727272</color>
+    <color name="multiple_image_select_divider">#B6B6B6</color>
+    <color name="multiple_image_select_toolbarPrimaryText">#FFFFFF</color>
+    <color name="multiple_image_select_albumTextBackground">#99FFFFFF</color>
+    <color name="multiple_image_select_imageSelectBackground">#000000</color>
+
+
+
+
+
+
+
+
+</resources>

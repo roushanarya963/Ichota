@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".fragments.CallAssistanceFragment">
+
+    <!-- TODO: Update blank fragment layout -->
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/app_bar_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        >
+        <com.google.android.material.appbar.MaterialToolbar
+            android:id="@+id/top_app_bar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:navigationIcon="@drawable/ic_back"
+            app:navigationIconTint="@color/colorWhite"
+            app:title="@string/txt_emg_hlp_ned"
+            app:titleTextColor="@color/colorWhite"
+            app:titleTextAppearance="@style/homeTabTextAppearance"
+            />
+    </com.google.android.material.appbar.AppBarLayout>
+
+
+    <TextView
+        android:id="@+id/tv_sos_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/sos_btn_call_assi"
+        android:fontFamily="@font/sf_pro_display_bold"
+        android:textAppearance="@style/TextAppearance.MaterialComponents.Headline5"
+        app:layout_constraintTop_toBottomOf="@+id/app_bar_layout"
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="20dp"
+        />
+    <TextView
+        android:id="@+id/tv_hold_buttom_hint"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/hld_btn_fr_3_sec"
+        android:layout_marginTop="20dp"
+        android:fontFamily="@font/sf_pro_display_regular"
+        android:textColor="@color/colorPrimary"
+        app:layout_constraintTop_toBottomOf="@+id/tv_sos_title"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+
+        />
+
+    <com.airbnb.lottie.LottieAnimationView
+        android:id="@+id/call_assis_sos_lotti_anim"
+        android:layout_width="350dp"
+        android:layout_height="350dp"
+        app:lottie_rawRes="@raw/ripple"
+        app:lottie_autoPlay="true"
+        app:lottie_loop="true"
+        android:tint="@color/colorPrimary"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginTop="10dp"
+        />
+
+    <TextView
+        android:id="@+id/tv_sos"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/sf_pro_display_regular"
+        android:text="@string/txt_sos"
+        android:textAppearance="@style/TextAppearance.AppCompat.Body2"
+        android:textColor="@color/colorWhite"
+        android:textSize="30sp"
+        app:layout_constraintBottom_toBottomOf="@+id/call_assis_sos_lotti_anim"
+        app:layout_constraintEnd_toEndOf="@+id/call_assis_sos_lotti_anim"
+        app:layout_constraintStart_toStartOf="@+id/call_assis_sos_lotti_anim"
+        app:layout_constraintTop_toTopOf="@+id/call_assis_sos_lotti_anim" />
+
+    <TextView
+        android:id="@+id/tv_message_will_alert"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="16dp"
+        android:fontFamily="@font/sf_pro_display_medium"
+        android:gravity="center"
+        android:text="@string/messageWillAlertLocalAuthorities"
+        android:textAppearance="@style/TextAppearance.MaterialComponents.Body2"
+
+        android:textColor="@color/colorTextPrimary"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

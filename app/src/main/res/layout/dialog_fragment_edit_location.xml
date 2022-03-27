@@ -1,0 +1,222 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    tools:context=".dialogs.EditLocationDialogFragment">
+
+    <TextView
+        android:id="@+id/tv_zip_code_header"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:fontFamily="@font/sf_pro_display_bold"
+        android:text="@string/locationSearch"
+        android:textColor="@color/colorTextPrimary"
+        android:textAppearance="@style/TextAppearance.MaterialComponents.Headline6"
+        app:layout_constraintEnd_toStartOf="@+id/gl_end"
+        app:layout_constraintStart_toStartOf="@+id/gl_start"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/fab_back"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:hapticFeedbackEnabled="true"
+        android:src="@drawable/ic_back"
+        app:backgroundTint="@color/colorPrimary"
+        app:borderWidth="0dp"
+        app:fabCustomSize="32dp"
+        app:fabSize="mini"
+        app:layout_constraintBottom_toBottomOf="@+id/tv_zip_code_header"
+        app:layout_constraintStart_toStartOf="@+id/gl_start"
+        app:layout_constraintTop_toTopOf="@+id/tv_zip_code_header"
+        app:maxImageSize="18dp"
+        app:tint="@color/colorWhite" />
+
+    <TextView
+        android:id="@+id/tv_whereYouSearchingHeader"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="48dp"
+        android:fontFamily="@font/sf_pro_display_medium"
+        android:text="@string/whereAreYouSearching"
+        android:textAppearance="@style/TextAppearance.MaterialComponents.Body1"
+        android:textColor="@color/colorTextPrimary"
+        app:layout_constraintEnd_toStartOf="@+id/gl_end"
+        app:layout_constraintHorizontal_bias="0.0"
+        android:gravity="center"
+        app:layout_constraintStart_toStartOf="@+id/gl_start"
+        app:layout_constraintTop_toBottomOf="@+id/tv_zip_code_header" />
+
+
+    <TextView
+        android:id="@+id/bt_within_location"
+        android:layout_width="wrap_content"
+        android:layout_height="60dp"
+        android:layout_marginTop="16dp"
+        android:text="@string/getMyLocation"
+        android:gravity="center"
+        android:textColor="@color/colorPrimary"
+        android:background="@drawable/bg_outline_primary_color"
+        android:paddingStart="48dp"
+        android:paddingEnd="32dp"
+        app:layout_constraintEnd_toStartOf="@+id/gl_end"
+        app:layout_constraintStart_toStartOf="@+id/gl_start"
+        app:layout_constraintTop_toBottomOf="@+id/tv_whereYouSearchingHeader"
+
+        />
+
+
+
+
+    <ImageView
+        android:id="@+id/iv_pin"
+        android:layout_width="18dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:src="@drawable/ic_pin_2"
+        app:layout_constraintBottom_toBottomOf="@+id/bt_within_location"
+        app:layout_constraintStart_toStartOf="@+id/bt_within_location"
+        app:layout_constraintTop_toTopOf="@+id/bt_within_location" />
+
+    <ProgressBar
+        android:id="@id/progress_bar"
+        style="?android:progressBarStyleSmall"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="64dp"
+        android:foregroundGravity="center"
+        android:indeterminate="true"
+        android:indeterminateTint="@color/colorPrimary"
+        android:padding="6dp"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="@+id/iv_pin"
+        app:layout_constraintStart_toStartOf="@+id/iv_pin"
+        app:layout_constraintTop_toTopOf="@+id/iv_pin" />
+
+    <TextView
+        android:id="@+id/tv_or"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/sf_pro_display_semibold"
+        android:text="Or"
+        android:layout_marginTop="16dp"
+        android:textSize="16sp"
+        android:textColor="@color/colorTextPrimary"
+        app:layout_constraintEnd_toStartOf="@+id/gl_end"
+        app:layout_constraintStart_toStartOf="@+id/gl_start"
+        app:layout_constraintTop_toBottomOf="@+id/bt_within_location" />
+
+    <RadioGroup
+        android:id="@+id/rg_zip_address_selection"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="@+id/bt_within_location"
+        app:layout_constraintStart_toStartOf="@+id/bt_within_location"
+        app:layout_constraintTop_toBottomOf="@+id/tv_or">
+
+        <RadioButton
+            android:id="@+id/rb_zip_code"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/zip"
+            android:checked="true"
+            android:buttonTint="@color/colorPrimary"
+            android:textAppearance="@style/TextAppearance.MaterialComponents.Body2"
+            android:fontFamily="@font/sf_pro_display_medium"
+            android:textColor="@color/colorTextPrimary"
+            android:layout_marginEnd="16dp"/>
+
+        <RadioButton
+            android:id="@+id/rb_address"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:buttonTint="@color/colorPrimary"
+            android:textAppearance="@style/TextAppearance.MaterialComponents.Body2"
+            android:fontFamily="@font/sf_pro_display_medium"
+            android:textColor="@color/colorTextPrimary"
+            android:text="@string/address" />
+    </RadioGroup>
+
+
+    <EditText
+        android:id="@+id/et_pin_code"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:background="@drawable/bg_outline_et"
+        android:fontFamily="@font/sf_pro_display_medium"
+        android:gravity="center"
+        android:hint="@string/zipCode"
+        android:inputType="textPostalAddress"
+        android:maxLength="6"
+        android:padding="16dp"
+        android:textAllCaps="true"
+        android:imeOptions="actionSearch"
+        android:textColor="@color/colorTextPrimary"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="@+id/bt_within_location"
+        app:layout_constraintStart_toStartOf="@+id/bt_within_location"
+        app:layout_constraintTop_toBottomOf="@+id/rg_zip_address_selection" />
+
+    <ProgressBar
+        android:id="@+id/progress_bar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:indeterminate="true"
+        android:indeterminateTint="@color/colorPrimary"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="@+id/et_pin_code"
+        app:layout_constraintStart_toEndOf="@+id/et_pin_code"
+        app:layout_constraintTop_toTopOf="@+id/et_pin_code" />
+
+    <TextView
+        android:id="@+id/tv_address"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:fontFamily="@font/sf_pro_display_semibold"
+        tools:text="Sector 74,Mohali"
+        android:gravity="center"
+        android:textAppearance="@style/TextAppearance.MaterialComponents.Body1"
+        android:textColor="@color/colorTextPrimary"
+        app:layout_constraintEnd_toStartOf="@+id/gl_end"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/gl_start"
+        app:layout_constraintTop_toBottomOf="@+id/et_pin_code" />
+
+    <Button
+        android:id="@+id/bt_save_address"
+        android:layout_width="0dp"
+        android:layout_height="60dp"
+        android:layout_marginTop="32dp"
+        android:fontFamily="@font/sf_pro_display_medium"
+        android:text="@string/apply"
+        android:textColor="@color/colorWhite"
+        app:backgroundTint="@color/colorPrimary"
+        android:textAppearance="@style/TextAppearance.MaterialComponents.Body2"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/gl_end"
+        app:layout_constraintHorizontal_bias="0.0"
+        android:layout_marginBottom="24dp"
+        app:layout_constraintStart_toStartOf="@+id/gl_start"
+        app:layout_constraintTop_toBottomOf="@+id/tv_address"
+        app:shapeAppearance="@style/ShapeAppearance.App.SmallComponents_round_12" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/gl_start"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_begin="16dp" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/gl_end"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_end="16dp" />
+</androidx.constraintlayout.widget.ConstraintLayout>

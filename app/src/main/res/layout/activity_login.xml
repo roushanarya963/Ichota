@@ -1,0 +1,255 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:focusableInTouchMode="true"
+    android:focusable="true"
+    tools:context=".auth.LoginActivity">
+
+    <ImageView
+        android:id="@+id/iv_bg"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scaleType="centerCrop"
+        android:src="@drawable/bg_login"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+    <ImageView
+        android:id="@+id/iv_ichota"
+        android:layout_width="0dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="32dp"
+        android:src="@drawable/ichota_logo"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/iv_welcome_back"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:fontFamily="@font/sf_pro_display_bold"
+        android:gravity="center"
+        android:text="@string/welcomeBack"
+        android:textColor="@color/colorWhite"
+        android:textSize="40sp"
+        app:layout_constraintEnd_toStartOf="@+id/gl_end"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/gl_start"
+        app:layout_constraintTop_toBottomOf="@+id/iv_ichota" />
+
+    <TextView
+        android:id="@+id/tv_login_with_email_header"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:fontFamily="@font/sf_pro_display_regular"
+        android:gravity="center"
+        android:lineSpacingExtra="5dp"
+        android:text="@string/loginWithEmailStartBuying"
+        android:textAppearance="@style/TextAppearance.MaterialComponents.Body1"
+        android:textColor="@color/colorBtBackTxt"
+        app:layout_constraintEnd_toStartOf="@+id/gl_end"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/gl_start"
+        app:layout_constraintTop_toBottomOf="@+id/iv_welcome_back" />
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/input_layout_email"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:hint="@string/yourEmail"
+        android:textColorHint="@color/selector_et_hint"
+        app:hintTextColor="@color/selector_et_hint"
+        app:boxBackgroundMode="filled"
+        app:boxStrokeColor="@color/selector_et_bottom_line"
+        app:layout_constraintEnd_toStartOf="@+id/gl_end"
+        app:layout_constraintStart_toStartOf="@+id/gl_start"
+        app:layout_constraintTop_toBottomOf="@+id/tv_login_with_email_header">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/et_email"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:backgroundTint="@android:color/transparent"
+            android:fontFamily="@font/sf_pro_display_medium"
+            android:inputType="textEmailAddress"
+            android:textAppearance="@style/TextAppearance.MaterialComponents.Body2"
+            android:textColor="@color/colorWhite" />
+
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/input_layout_password"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:hint="@string/yourPassword"
+        android:labelFor="@id/et_password"
+        android:textColorHint="@color/selector_et_hint"
+        app:hintTextColor="@color/selector_et_hint"
+        app:boxStrokeColor="@color/selector_et_bottom_line"
+        app:endIconMode="password_toggle"
+        app:endIconTint="@color/colorPrimary"
+        app:layout_constraintEnd_toStartOf="@+id/gl_end"
+        app:layout_constraintStart_toStartOf="@+id/gl_start"
+        app:layout_constraintTop_toBottomOf="@+id/input_layout_email">
+
+        <EditText
+            android:id="@+id/et_password"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:enabled="true"
+            android:maxLines="1"
+            android:imeOptions="actionDone"
+            android:inputType="textPassword"
+            android:backgroundTint="@android:color/transparent"
+            android:fontFamily="@font/sf_pro_display_medium"
+            android:textAppearance="@style/TextAppearance.MaterialComponents.Body2"
+            android:textColor="@color/colorWhite"
+            android:textColorHint="@color/selector_et_hint"/>
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+
+    <Button
+        android:id="@+id/bt_forgot_password"
+        style="@style/Widget.MaterialComponents.Button.TextButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:fontFamily="@font/sf_pro_display_regular"
+        android:paddingStart="0dp"
+        android:paddingEnd="0dp"
+        android:text="@string/forgotyourPassword"
+        android:textAppearance="@style/TextAppearance.MaterialComponents.Caption"
+        android:textColor="@color/colorBtBackTxt"
+        app:layout_constraintStart_toStartOf="@+id/gl_start"
+        app:layout_constraintTop_toBottomOf="@+id/input_layout_password" />
+
+    <Button
+        android:id="@+id/bt_login_to_account"
+        android:layout_width="0dp"
+        android:layout_height="60dp"
+        android:layout_marginBottom="8dp"
+        android:fontFamily="@font/sf_pro_display_medium"
+        android:text="@string/loginToMyAccount"
+        android:textAllCaps="false"
+        android:maxLines="1"
+        android:ellipsize="end"
+        android:hapticFeedbackEnabled="true"
+        android:textAppearance="@style/TextAppearance.App.Button"
+        android:textColor="@color/colorWhite"
+        android:textSize="14sp"
+        app:layout_constraintBottom_toTopOf="@+id/bt_google"
+        app:layout_constraintEnd_toStartOf="@+id/gl_end"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="@+id/gl_start"
+        app:rippleColor="@color/colorPrimaryDark"
+        app:shapeAppearance="@style/ShapeAppearance.App.SmallComponents_round_12" />
+
+    <Button
+        android:id="@+id/bt_google"
+        style="@style/Widget.MaterialComponents.Button.Icon"
+        android:layout_width="0dp"
+        android:layout_height="60dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="8dp"
+        android:backgroundTint="@color/colorGoogle"
+        android:fontFamily="@font/sf_pro_display_medium"
+        android:text="@string/google"
+        android:maxLines="1"
+        android:hapticFeedbackEnabled="true"
+        android:ellipsize="end"
+        android:textAllCaps="false"
+        android:textColor="@color/colorWhite"
+        android:textSize="14sp"
+        app:icon="@drawable/ic_google"
+        app:iconGravity="textStart"
+        app:iconSize="20dp"
+        app:layout_constraintBottom_toTopOf="@+id/bt_goto_sign_up"
+        app:layout_constraintEnd_toStartOf="@+id/bt_facebook"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintHorizontal_chainStyle="packed"
+        app:layout_constraintStart_toStartOf="@+id/gl_start"
+        app:rippleColor="@android:color/holo_red_light"
+        app:shapeAppearance="@style/ShapeAppearance.App.SmallComponents_round_12" />
+
+
+    <Button
+        android:id="@+id/bt_facebook"
+        style="@style/Widget.MaterialComponents.Button.Icon"
+        android:layout_width="0dp"
+        android:layout_height="60dp"
+        android:layout_marginStart="8dp"
+        android:backgroundTint="@color/colorFacebook"
+        android:fontFamily="@font/sf_pro_display_medium"
+        android:text="@string/facebook"
+        android:textAllCaps="false"
+        android:hapticFeedbackEnabled="true"
+        android:textAppearance="@style/TextAppearance.App.Button"
+        android:textColor="@color/colorWhite"
+        android:textSize="14sp"
+        app:icon="@drawable/ic_facebook"
+        app:iconGravity="textStart"
+        app:iconSize="20dp"
+        app:layout_constraintBottom_toBottomOf="@+id/bt_google"
+        app:layout_constraintEnd_toStartOf="@+id/gl_end"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/bt_google"
+        app:layout_constraintTop_toTopOf="@+id/bt_google"
+        app:rippleColor="@android:color/holo_blue_light"
+        app:shapeAppearance="@style/ShapeAppearance.App.SmallComponents_round_12" />
+
+
+    <Button
+        android:id="@+id/bt_goto_sign_up"
+        style="@style/Widget.MaterialComponents.Button.TextButton"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="24dp"
+        android:fontFamily="@font/sf_pro_display_regular"
+        android:gravity="center"
+        android:text="@string/dontHaveAccount"
+        android:textAppearance="@style/TextAppearance.MaterialComponents.Subtitle1"
+        android:textColor="@color/colorBtBackTxt"
+        android:textSize="14sp"
+        android:hapticFeedbackEnabled="true"
+        app:rippleColor="@android:color/transparent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/gl_end"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/gl_start" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/gl_start"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_begin="24dp" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/gl_end"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_end="24dp" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+

@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    style="@style/Widget.MaterialComponents.BottomSheet.Modal">
+
+    <TextView
+        android:id="@+id/tv_sort_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:fontFamily="@font/sf_pro_display_semibold"
+        android:text="@string/sort"
+        android:textSize="18sp"
+        android:textColor="@color/colorTextPrimary"
+        app:layout_constraintEnd_toStartOf="@+id/gl_end"
+        app:layout_constraintStart_toStartOf="@+id/gl_start"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/bt_back"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:backgroundTint="@color/colorPrimary"
+        android:src="@drawable/ic_back"
+        app:borderWidth="0dp"
+        app:fabCustomSize="28dp"
+        android:layout_marginStart="-10dp"
+        app:layout_constraintBottom_toBottomOf="@+id/tv_sort_title"
+        app:layout_constraintStart_toStartOf="@+id/gl_start"
+        app:layout_constraintTop_toTopOf="@+id/tv_sort_title"
+        app:layout_constraintVertical_bias="0.333"
+        app:maxImageSize="18dp"
+        app:tint="@color/colorWhite" />
+
+    <RadioGroup
+        android:id="@+id/rg_sort"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/gl_end"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="@+id/gl_start"
+        app:layout_constraintTop_toBottomOf="@+id/tv_sort_title"
+        android:layout_marginBottom="24dp">
+
+        <RadioButton
+            android:id="@+id/rb_newest"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:button="@drawable/selector_sort_check"
+            app:useMaterialThemeColors="false"
+            android:fontFamily="@font/sf_pro_display_medium"
+            android:padding="16dp"
+            android:checked="false"
+            android:text="@string/newest"
+            android:textAppearance="@style/TextAppearance.MaterialComponents.Body2"
+            android:textColor="@color/colorTextPrimary" />
+
+        <RadioButton
+            android:id="@+id/rb_closest"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:button="@drawable/selector_sort_check"
+            android:fontFamily="@font/sf_pro_display_medium"
+            android:padding="16dp"
+            android:text="@string/closest"
+            android:checked="false"
+            app:useMaterialThemeColors="false"
+            android:textAppearance="@style/TextAppearance.MaterialComponents.Body2"
+            android:textColor="@color/colorTextPrimary" />
+
+        <RadioButton
+            android:id="@+id/rb_low_to_high"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:button="@drawable/selector_sort_check"
+            android:fontFamily="@font/sf_pro_display_medium"
+            android:padding="16dp"
+            android:text="@string/priceLowToHigh"
+            android:checked="false"
+            app:useMaterialThemeColors="false"
+            android:textAppearance="@style/TextAppearance.MaterialComponents.Body2"
+            android:textColor="@color/colorTextPrimary" />
+
+        <RadioButton
+            android:id="@+id/rb_high_to_low"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:button="@drawable/selector_sort_check"
+            android:fontFamily="@font/sf_pro_display_medium"
+            android:padding="16dp"
+            android:text="@string/priceHighToLow"
+            android:checked="false"
+            app:useMaterialThemeColors="false"
+            android:textAppearance="@style/TextAppearance.MaterialComponents.Body2"
+            android:textColor="@color/colorTextPrimary" />
+
+    </RadioGroup>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/gl_start"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_begin="16dp" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/gl_end"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_end="16dp" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

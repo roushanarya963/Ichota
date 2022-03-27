@@ -1,0 +1,637 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/nav_graph_home">
+
+    <fragment
+        android:id="@+id/nav_graph_home"
+        android:name="com.ichota.fragments.HomeFragment"
+        android:label="fragment_home"
+        tools:layout="@layout/fragment_home">
+
+
+        <action
+            android:id="@+id/action_nav_graph_home_to_postsListFragment"
+            app:destination="@id/nav_posts_list_fragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+
+
+        <action
+            android:id="@+id/action_nav_graph_home_to_nav_post_options_fragment"
+            app:destination="@id/nav_post_options_fragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/nav_graph_message"
+        android:name="com.ichota.fragments.RecentChatDialogListFragment"
+        android:label="fragment_message"
+        tools:layout="@layout/fragment_recent_chat_dialog_list" />
+
+    <fragment
+        android:id="@+id/nav_graph_add_post"
+        android:name="com.ichota.fragments.AddPostFragment"
+        android:label="fragment_add_post"
+        tools:layout="@layout/fragment_add_post">
+
+        <argument
+            android:name="categoryDetail"
+            android:defaultValue=""
+            app:argType="string"/>
+
+        <action
+            android:id="@+id/action_nav_graph_add_post_to_nav_add_post_step_2_fragment"
+            app:destination="@id/nav_add_post_step_2_fragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/nav_graph_profile"
+        android:name="com.ichota.profile.ProfileFragment"
+        android:label="fragment_profile"
+        tools:layout="@layout/fragment_profile">
+
+        <argument
+            android:name="userId"
+            android:defaultValue=""
+            app:argType="string" />
+
+    </fragment>
+    <fragment
+        android:id="@+id/nav_add_post_step_2_fragment"
+        android:name="com.ichota.fragments.AddPostStep2Fragment"
+        android:label="AddPostStep2"
+        tools:layout="@layout/fragment_add_post_step2" />
+    <fragment
+        android:id="@+id/nav_product_search_fragment"
+        android:name="com.ichota.fragments.SearchFragment"
+        android:label="fragment_product_search"
+        tools:layout="@layout/fragment_product_search">
+
+        <argument
+            android:name="searchKeyword"
+            android:defaultValue=""
+            app:argType="string" />
+
+    </fragment>
+    <fragment
+        android:id="@+id/nav_favourite_fragment"
+        android:name="com.ichota.fragments.FavouriteFragment"
+        android:label="fragment_favourite"
+        tools:layout="@layout/fragment_favourite" />
+
+    <fragment
+        android:id="@+id/nav_post_detail_fragment"
+        android:name="com.ichota.fragments.PostDetailFragment"
+        android:label="ProductDetailFragment"
+        app:destination="@id/nav_graph_profile"
+        tools:layout="@layout/fragment_product_detail">
+
+        <argument
+            android:name="categoryType"
+            android:defaultValue=""
+            app:argType="string" />
+        <argument
+            android:name="postId"
+            android:defaultValue=""
+            app:argType="string" />
+        <argument
+            android:name="postedUserId"
+            android:defaultValue=""
+            app:argType="string" />
+        <argument
+            android:name="categoryId"
+            android:defaultValue=""
+            app:argType="string"/>
+
+        <deepLink
+            android:id="@+id/deepLink"
+            app:uri="www.ichota.com/post/{categoryType}/{postId}/{postedUserId}" />
+
+    </fragment>
+    <fragment
+        android:id="@+id/nav_user_marketplace_fragment"
+        android:name="com.ichota.profile.UserMarketplaceFragment"
+        android:label="fragment_user_marketplace"
+        tools:layout="@layout/fragment_user_marketplace" />
+    <fragment
+        android:id="@+id/nav_account_fragment"
+        android:name="com.ichota.profile.AccountFragment"
+        android:label="fragment_account"
+        tools:layout="@layout/fragment_account">
+        <action
+            android:id="@+id/action_accountFragment_to_nav_graph_profile"
+            app:destination="@id/nav_graph_profile"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+
+        <action
+            android:id="@+id/action_nav_account_fragment_to_myListingFragment"
+            app:destination="@id/myListingFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+
+        <action
+            android:id="@+id/action_nav_account_fragment_to_nav_notification_fragment"
+            app:destination="@id/nav_notification_fragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+
+        <action
+            android:id="@+id/action_nav_account_fragment_to_nav_payment_methods_fragment"
+            app:destination="@id/nav_payment_methods_fragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+
+        <action
+            android:id="@+id/action_nav_account_fragment_to_nav_change_password_fragment"
+            app:destination="@id/nav_change_password_fragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+
+
+        <action
+            android:id="@+id/action_nav_account_fragment_to_nav_favourite_fragment"
+            app:destination="@id/nav_favourite_fragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+
+        <action
+            android:id="@+id/action_nav_account_fragment_to_editNameFragment"
+            app:destination="@id/editNameFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+
+        <action
+            android:id="@+id/action_nav_account_fragment_to_editEmailFragment"
+            app:destination="@id/editEmailFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+
+        <action
+            android:id="@+id/action_nav_account_fragment_to_editNumberFragment"
+            app:destination="@id/editNumberFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+
+
+    </fragment>
+    <fragment
+        android:id="@+id/nav_account_verification_fragment"
+        android:name="com.ichota.fragments.AccountVerificationFragment"
+        android:label="fragment_account_verification"
+        tools:layout="@layout/fragment_account_verification" >
+        <action
+            android:id="@+id/action_nav_account_verification_fragment_to_addPhoneNumberBottomSheetDialogFragment"
+            app:destination="@id/addPhoneNumberBottomSheetDialogFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/nav_posts_list_fragment"
+        android:name="com.ichota.fragments.PostsListFragment"
+        android:label="PostsListFragment">
+
+        <argument
+            android:name="categoryType"
+            android:defaultValue=""
+            app:argType="string" />
+        <argument
+            android:name="categoryId"
+            android:defaultValue=""
+            app:argType="string" />
+
+
+    </fragment>
+    <!--  <fragment
+          android:id="@+id/nav_notification_pager_fragment"
+          android:name="com.ichota.fragments.NotificationPagerFragment"
+          android:label="fragment_notification_pager"
+          tools:layout="@layout/fragment_notification_pager" />-->
+    <fragment
+        android:id="@+id/myListingFragment"
+        android:name="com.ichota.fragments.MyListingFragment"
+        android:label="fragment_my_listing"
+        tools:layout="@layout/fragment_my_listing" />
+    <fragment
+        android:id="@+id/nav_my_network_pager_fragment"
+        android:name="com.ichota.fragments.MyNetworkPagerFragment"
+        android:label="fragment_my_network_pager"
+        tools:layout="@layout/fragment_my_network_pager">
+
+        <argument
+            android:name="userId"
+            android:defaultValue=""
+            app:argType="string" />
+
+    </fragment>
+    <fragment
+        android:id="@+id/nav_post_detail_bid_fragment"
+        android:name="com.ichota.fragments.PostDetailBidFragment"
+        android:label="PostDetailBidFragment"
+        tools:layout="@layout/fragment_post_detail_bid">
+
+        <action
+            android:id="@+id/action_nav_post_detail_bid_fragment_to_nav_add_bid_fragment"
+            app:destination="@id/nav_add_bid_fragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+
+        <argument
+            android:name="categoryType"
+            android:defaultValue=""
+            app:argType="string" />
+        <argument
+            android:name="postId"
+            android:defaultValue=""
+            app:argType="string" />
+        <argument
+            android:name="postedUserId"
+            android:defaultValue=""
+            app:argType="string" />
+
+
+    </fragment>
+    <fragment
+        android:id="@+id/nav_add_bid_fragment"
+        android:name="com.ichota.fragments.AddBidFragment"
+        android:label="fragment_add_bid"
+        tools:layout="@layout/fragment_add_bid">
+        <argument
+            android:name="postId"
+            android:defaultValue=""
+            app:argType="string" />
+
+        <argument
+            android:name="maxBidAmount"
+            android:defaultValue="0"
+            app:argType="integer" />
+
+        <argument
+            android:name="productPrice"
+            android:defaultValue=""
+            app:argType="string" />
+
+        <argument
+            android:name="productImage"
+            android:defaultValue=""
+            app:argType="string" />
+
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/nav_add_service_fragment"
+        android:name="com.ichota.fragments.AddServiceFragment"
+        android:label="AddServiceFragment"
+        tools:layout="@layout/fragment_add_service">
+
+        <argument
+            android:name="categoryDetail"
+            android:defaultValue=""
+            app:argType="string"/>
+
+        <action
+            android:id="@+id/action_nav_add_service_fragment_to_nav_add_service_step_2_fragment"
+            app:destination="@id/nav_add_service_step_2_fragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+
+    </fragment>
+    <fragment
+        android:id="@+id/nav_add_service_step_2_fragment"
+        android:name="com.ichota.fragments.AddServiceStep2Fragment"
+        android:label="AddServiceStep2Fragment"
+        tools:layout="@layout/fragment_add_service_step2" />
+    <fragment
+        android:id="@+id/nav_public_profile_fragment"
+        android:name="com.ichota.publicProfile.PublicProfileFragment"
+        android:label="PublicProfileFragment"
+        tools:layout="@layout/fragment_public_profile">
+
+        <argument
+            android:name="userId"
+            android:defaultValue=""
+            app:argType="string" />
+        <deepLink
+            android:id="@+id/deepLink2"
+            app:uri="www.ichota.com/userprofile/{userId}" />
+    </fragment>
+    <fragment
+        android:id="@+id/nav_payment_methods_fragment"
+        android:name="com.ichota.fragments.PaymentMethodsFragment"
+        android:label="fragment_payment_methods"
+        tools:layout="@layout/fragment_payment_methods" />
+
+    <dialog
+        android:id="@+id/nav_post_options_fragment"
+        android:name="com.ichota.dialogs.AddPostOptionsDialogFragment"
+        android:label="fragment_add_post_options_dialog"
+        tools:layout="@layout/fragment_add_post_options_dialog" />
+    <fragment
+        android:id="@+id/nav_change_password_fragment"
+        android:name="com.ichota.fragments.ChangePasswordFragment"
+        android:label="fragment_change_password"
+        tools:layout="@layout/fragment_change_password" />
+    <fragment
+        android:id="@+id/nav_notification_fragment"
+        android:name="com.ichota.fragments.NotificationFragment"
+        android:label="fragment_notification"
+        tools:layout="@layout/fragment_notification" >
+
+
+
+    </fragment>
+    <fragment
+        android:id="@+id/editNameFragment"
+        android:name="com.ichota.fragments.EditNameFragment"
+        android:label="fragment_edit_name"
+        tools:layout="@layout/fragment_edit_name">
+        <argument
+            android:name="name"
+            android:defaultValue=""
+            app:argType="string" />
+
+    </fragment>
+    <fragment
+        android:id="@+id/editEmailFragment"
+        android:name="com.ichota.fragments.EditEmailFragment"
+        android:label="EditEmailFragment"
+        tools:layout="@layout/fragment_edit_email">
+        <argument
+            android:name="email"
+            android:defaultValue=""
+            app:argType="string" />
+
+    </fragment>
+    <fragment
+        android:id="@+id/editNumberFragment"
+        android:name="com.ichota.fragments.EditNumberFragment"
+        android:label="EditNumberFragment"
+        tools:layout="@layout/fragment_edit_number">
+        <argument
+            android:name="number"
+            android:defaultValue=""
+            app:argType="string" />
+
+    </fragment>
+    <fragment
+        android:id="@+id/otpVerificationFragment"
+        android:name="com.ichota.fragments.OtpVerificationFragment"
+        android:label="OtpVerificationFragment"
+        tools:layout="@layout/fragment_otp_vertification">
+        <argument
+            android:name="value"
+            android:defaultValue=""
+            app:argType="string" />
+        <argument
+            android:name="type"
+            android:defaultValue=""
+            app:argType="string" />
+    </fragment>
+    <fragment
+        android:id="@+id/nav_chat_fragment"
+        android:name="com.ichota.fragments.ChatFragment"
+        android:label="fragment_chat">
+        <argument
+            android:name="chatData"
+            app:argType="com.ichota.model.ChatDialog"
+            app:nullable="true" />
+        <argument
+            android:name="messageType"
+            android:defaultValue="Text"
+            app:argType="string" />
+        <argument
+            android:name="postType"
+            android:defaultValue=""
+            app:argType="string"
+            />
+        <action
+            android:id="@+id/action_nav_chat_fragment_to_locationDetailFragment"
+            app:destination="@id/locationDetailFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+
+    </fragment>
+    <fragment
+        android:id="@+id/locationDetailFragment"
+        android:name="com.ichota.fragments.LocationDetailFragment"
+        android:label="fragment_location_detail"
+        tools:layout="@layout/fragment_location_detail">
+
+
+        <argument
+            android:name="message"
+            app:argType="com.ichota.model.Message"
+            app:nullable="true" />
+
+        <argument
+            android:name="post_type"
+            app:argType="string" />
+        <argument
+            android:name="post_id"
+            app:argType="string" />
+        <argument
+            android:name="posted_by_user_id"
+            app:argType="string" />
+        <action
+            android:id="@+id/action_locationDetailFragment_to_reportSafetyIssueFragment"
+            app:destination="@id/reportSafetyIssueFragment" />
+
+        <!--<argument
+            android:name="offerItemType"
+            app:argType="integer" />
+        <argument
+            android:name="offerItemId"
+            app:argType="string" />-->
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/callAssistanceFragmment"
+        android:name="com.ichota.fragments.CallAssistanceFragment"
+        android:label="fragment_call_assistance_fragmment"
+        tools:layout="@layout/call_assistance_fragment" >
+        <action
+            android:id="@+id/action_callAssistanceFragmment_to_sosCallLongPressedEvent"
+            app:destination="@id/sosCallLongPressedEvent" />
+    </fragment>
+
+
+    <action
+        android:id="@+id/action_global_nav_graph_add_post"
+        app:destination="@id/nav_graph_add_post"
+        app:enterAnim="@anim/slide_in_right"
+        app:exitAnim="@anim/slide_out_left"
+        app:popEnterAnim="@anim/slide_in_left"
+        app:popExitAnim="@anim/slide_out_right" />
+
+    <action
+        android:id="@+id/action_global_nav_product_search_fragment"
+        app:destination="@id/nav_product_search_fragment"
+        app:enterAnim="@anim/slide_in_right"
+        app:exitAnim="@anim/slide_out_left"
+        app:popEnterAnim="@anim/slide_in_left"
+        app:popExitAnim="@anim/slide_out_right" />
+    <action
+        android:id="@+id/action_global_nav_add_service_fragment"
+        app:destination="@id/nav_add_service_fragment"
+        app:enterAnim="@anim/slide_in_right"
+        app:exitAnim="@anim/slide_out_left"
+        app:popEnterAnim="@anim/slide_in_left"
+        app:popExitAnim="@anim/slide_out_right" />
+    <action
+        android:id="@+id/action_global_nav_post_detail_bid_fragment"
+        app:destination="@id/nav_post_detail_bid_fragment"
+        app:enterAnim="@anim/slide_in_right"
+        app:exitAnim="@anim/slide_out_left"
+        app:popEnterAnim="@anim/slide_in_left"
+        app:popExitAnim="@anim/slide_out_right" />
+    <action
+        android:id="@+id/action_global_nav_post_detail_fragment"
+        app:destination="@id/nav_post_detail_fragment"
+        app:enterAnim="@anim/slide_in_right"
+        app:exitAnim="@anim/slide_out_left"
+        app:popEnterAnim="@anim/slide_in_left"
+        app:popExitAnim="@anim/slide_out_right" />
+    <action
+        android:id="@+id/action_global_nav_public_profile_fragment"
+        app:destination="@id/nav_public_profile_fragment"
+        app:enterAnim="@anim/slide_in_right"
+        app:exitAnim="@anim/slide_out_left"
+        app:popEnterAnim="@anim/slide_in_left"
+        app:popExitAnim="@anim/slide_out_right" />
+    <action
+        android:id="@+id/action_global_nav_chat_fragment"
+        app:destination="@id/nav_chat_fragment"
+        app:enterAnim="@anim/slide_in_right"
+        app:exitAnim="@anim/slide_out_left"
+        app:popEnterAnim="@anim/slide_in_left"
+        app:popExitAnim="@anim/slide_out_right" />
+    <action
+        android:id="@+id/action_global_nav_my_network_pager_fragment"
+        app:destination="@id/nav_my_network_pager_fragment"
+        app:enterAnim="@anim/slide_in_right"
+        app:exitAnim="@anim/slide_out_left"
+        app:popEnterAnim="@anim/slide_in_left"
+        app:popExitAnim="@anim/slide_out_right" />
+    <action
+        android:id="@+id/action_global_otpVerificationFragment"
+        app:destination="@id/otpVerificationFragment"
+        app:enterAnim="@anim/slide_in_right"
+        app:exitAnim="@anim/slide_out_left"
+        app:popEnterAnim="@anim/slide_in_left"
+        app:popExitAnim="@anim/slide_out_right" />
+    <action
+        android:id="@+id/action_nav_chat_fragment_to_callAssistanceFragment"
+        app:destination="@id/callAssistanceFragmment"
+        app:enterAnim="@anim/slide_in_right"
+        app:exitAnim="@anim/slide_out_left"
+        app:popEnterAnim="@anim/slide_in_left"
+        app:popExitAnim="@anim/slide_out_right" />
+    <fragment
+        android:id="@+id/sosCallLongPressedEvent"
+        android:name="com.ichota.fragments.SosCallLongPressedEventFragment"
+        android:label="fragment_sos_call_long_pressed_event"
+        tools:layout="@layout/sos_call_long_pressed_event_fragment" />
+
+    <fragment
+        android:id="@+id/safetyToolkitBottomSheetDialog"
+        android:name="com.ichota.dialogs.SafetyToolkitBottomSheetDialog"
+        android:label="SafetyToolkitBottomSheetDialog" >
+        <action
+            android:id="@+id/action_safetyToolkitBottomSheetDialog_to_shareLocationBottomSheetDialog"
+            app:destination="@id/shareLocationBottomSheetDialog"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right"/>
+    </fragment>
+    <fragment
+        android:id="@+id/shareLocationBottomSheetDialog"
+        android:name="com.ichota.dialogs.ShareLocationBottomSheetDialog"
+        android:label="fragment_share_locationbtm_sheet"
+        />
+    <fragment
+        android:id="@+id/reportSafetyIssueFragment"
+        android:name="com.ichota.fragments.ReportSafetyIssueFragment"
+        android:label="ReportSafetyIssueFragment"
+        tools:layout="@layout/fragment_report_safety_issue">
+
+
+        <argument
+            android:name="remote_user_id"
+            app:argType="string" />
+        <argument
+            android:name="post_type"
+            app:argType="string" />
+        <argument
+            android:name="post_id"
+            app:argType="string" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/notificationProductDetailFragment"
+        android:name="com.ichota.fragments.NotificationProductDetailFragment"
+        android:label="fragment_notification_product_detail"
+        tools:layout="@layout/fragment_notification_product_detail" />
+    <fragment
+        android:id="@+id/notificationPagerFragment"
+        android:name="com.ichota.fragments.NotificationPagerFragment"
+        android:label="fragment_notification_pager"
+        tools:layout="@layout/fragment_notification_pager" />
+    <action android:id="@+id/action_global_nav_account_verification_fragment" app:destination="@id/nav_account_verification_fragment" />
+    <fragment
+        android:id="@+id/addPhoneNumberBottomSheetDialogFragment"
+        android:name="com.ichota.dialogs.AddPhoneNumberBottomSheetDialogFragment"
+        android:label="fragment_add_phone_number_bottom_sheet_dialog"
+        tools:layout="@layout/fragment_add_phone_number_bottom_sheet_dialog" />
+    <action android:id="@+id/action_global_nav_account_fragment" app:destination="@id/nav_account_fragment" />
+    <action android:id="@+id/action_global_editNumberFragment" app:destination="@id/editNumberFragment" />
+    <fragment
+        android:id="@+id/confirmBidDialogFragment"
+        android:name="com.ichota.dialogs.ConfirmBidDialogFragment"
+        android:label="ConfirmBidDialogFragment" />
+
+    <action android:id="@+id/action_global_nav_graph_home"
+        app:destination="@id/nav_graph_home"/>
+    <action android:id="@+id/action_global_nav_graph_profile" app:destination="@id/nav_graph_profile" />
+    <action android:id="@+id/action_global_nav_posts_list_fragment" app:destination="@id/nav_posts_list_fragment" />
+
+
+</navigation>

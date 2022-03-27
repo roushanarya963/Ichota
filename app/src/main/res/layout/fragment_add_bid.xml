@@ -1,0 +1,243 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:focusable="true"
+    android:focusableInTouchMode="true"
+    tools:context=".fragments.AddBidFragment">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/app_bar_layout"
+        android:layout_width="match_parent"
+        android:layout_height="?actionBarSize"
+        style="@style/Widget.MaterialComponents.AppBarLayout.Surface"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <com.google.android.material.appbar.MaterialToolbar
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginStart="-12dp">
+            <com.google.android.material.floatingactionbutton.FloatingActionButton
+                android:id="@+id/fab_back"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:backgroundTint="@color/colorPrimary"
+                android:src="@drawable/ic_back"
+                app:borderWidth="0dp"
+                app:fabCustomSize="28dp"
+                app:layout_constraintStart_toStartOf="@+id/gl_start"
+                app:layout_constraintTop_toTopOf="parent"
+                app:maxImageSize="16dp"
+                app:tint="@color/colorWhite" />
+        </com.google.android.material.appbar.MaterialToolbar>
+
+
+    </com.google.android.material.appbar.AppBarLayout>
+
+
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:clipToPadding="false"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior"
+        >
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+
+            <ImageView
+                android:id="@+id/iv_post"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:adjustViewBounds="true"
+                android:src="@drawable/app_logo"
+                app:layout_constraintDimensionRatio="4:3"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="1.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/product_name"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:paddingTop="8dp"
+                android:paddingBottom="8dp"
+                android:fontFamily="@font/sf_pro_display_bold"
+                tools:text="Toyota glanza"
+                android:textAppearance="@style/TextAppearance.MaterialComponents.Headline6"
+                android:textColor="@color/colorTextPrimary"
+                app:layout_constraintEnd_toStartOf="@+id/gl_end"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="@+id/gl_start"
+                app:layout_constraintTop_toBottomOf="@+id/iv_post" />
+
+
+            <View
+                android:id="@+id/view_1"
+                android:layout_width="0dp"
+                android:layout_height="1dp"
+                android:background="@color/colorGrey200"
+                app:layout_constraintEnd_toStartOf="@+id/gl_end"
+                app:layout_constraintStart_toStartOf="@+id/gl_start"
+                app:layout_constraintTop_toBottomOf="@+id/product_name" />
+
+            <TextView
+                android:id="@+id/tv_product_price_header"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/sf_pro_display_medium"
+                android:text="@string/productPrice"
+                android:layout_marginTop="8dp"
+                android:textAppearance="@style/TextAppearance.MaterialComponents.Caption"
+                android:textColor="@color/colorPrimary"
+                app:layout_constraintStart_toStartOf="@+id/gl_start"
+                app:layout_constraintTop_toBottomOf="@+id/view_1" />
+
+            <TextView
+                android:id="@+id/tv_product_price"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/sf_pro_display_bold"
+                android:textAppearance="@style/TextAppearance.MaterialComponents.Body1"
+                android:textColor="@color/colorTextPrimary"
+                app:layout_constraintStart_toStartOf="@+id/gl_start"
+                app:layout_constraintTop_toBottomOf="@+id/tv_product_price_header"
+                tools:text="$2000" />
+
+
+            <TextView
+                android:id="@+id/tv_current_bid_header"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:fontFamily="@font/sf_pro_display_medium"
+                android:text="@string/currentBid"
+                android:textAppearance="@style/TextAppearance.MaterialComponents.Caption"
+                android:textColor="@color/colorPrimary"
+                app:layout_constraintEnd_toStartOf="@+id/gl_end"
+                app:layout_constraintTop_toBottomOf="@+id/view_1" />
+
+            <TextView
+                android:id="@+id/tv_current_bid"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/sf_pro_display_bold"
+                android:textAppearance="@style/TextAppearance.MaterialComponents.Body1"
+                android:textColor="@color/colorTextPrimary"
+                app:layout_constraintEnd_toStartOf="@+id/gl_end"
+                app:layout_constraintTop_toBottomOf="@+id/tv_current_bid_header"
+                tools:text="$500" />
+
+
+            <View
+                android:id="@+id/view_2"
+                android:layout_width="0dp"
+                android:layout_height="1dp"
+                android:layout_marginTop="8dp"
+                android:background="@color/colorGrey200"
+                app:layout_constraintEnd_toStartOf="@+id/gl_end"
+                app:layout_constraintStart_toStartOf="@+id/gl_start"
+                app:layout_constraintTop_toBottomOf="@+id/tv_product_price" />
+
+
+            <TextView
+                android:id="@+id/tv_note"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:fontFamily="@font/sf_pro_display_medium"
+                android:text="@string/updateBidNote"
+                android:textAppearance="@style/TextAppearance.MaterialComponents.Caption"
+                android:textColor="@color/colorTextSecondary"
+                app:layout_constraintEnd_toStartOf="@+id/gl_end"
+                app:layout_constraintStart_toStartOf="@+id/gl_start"
+                app:layout_constraintTop_toBottomOf="@+id/view_2" />
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/input_layout_bid_price"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:hint="@string/bidPrice"
+                android:layout_marginTop="16dp"
+                app:prefixText="$"
+                app:shapeAppearanceOverlay="@style/ShapeAppearance.App.SmallComponents_round_12"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
+                app:layout_constraintEnd_toStartOf="@+id/gl_end"
+                app:layout_constraintStart_toStartOf="@+id/gl_start"
+                app:layout_constraintTop_toBottomOf="@+id/tv_note">
+
+                <EditText
+                    android:id="@+id/et_update_price"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/sf_pro_display_bold"
+                    android:gravity="start"
+                    android:inputType="number"
+                    android:textAppearance="@style/TextAppearance.MaterialComponents.Headline6"
+                    android:textColor="@color/colorTextPrimary"
+                    tools:text="100" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <Button
+                android:id="@+id/bt_place_bid"
+                android:layout_width="0dp"
+                android:layout_height="60dp"
+                android:layout_marginTop="60dp"
+                android:layout_marginBottom="16dp"
+                android:enabled="true"
+                android:fontFamily="@font/sf_pro_display_medium"
+                android:text="@string/placeBid"
+                android:textAppearance="@style/TextAppearance.MaterialComponents.Body2"
+                android:textColor="@color/colorWhite"
+                android:backgroundTint="@color/color_outline_blue"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/gl_end"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="@+id/gl_start"
+                app:layout_constraintTop_toBottomOf="@+id/input_layout_bid_price"
+                app:shapeAppearance="@style/ShapeAppearance.App.SmallComponents_round_12" />
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/gl_start"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintGuide_begin="16dp" />
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/gl_end"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintGuide_end="16dp" />
+
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+
+
+    </androidx.core.widget.NestedScrollView>
+
+
+
+    <include
+        android:id="@+id/progress_bar"
+        layout="@layout/layout_progress"
+        android:visibility="gone" />
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

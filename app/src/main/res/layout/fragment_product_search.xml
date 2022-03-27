@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".fragments.SearchFragment"
+    android:focusableInTouchMode="true"
+    android:focusable="true">
+
+
+    <ImageButton
+        android:id="@+id/bt_back"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:background="?selectableItemBackgroundBorderless"
+        android:src="@drawable/ic_back"
+        android:tint="@color/colorTextPrimary"
+        app:layout_constraintBottom_toBottomOf="@+id/et_search"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/et_search" />
+
+
+    <EditText
+        android:id="@+id/et_search"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:background="@drawable/bg_et_search"
+        android:hint="@string/search"
+        android:imeOptions="actionSearch"
+        android:inputType="text"
+        android:paddingStart="48dp"
+        android:paddingTop="8dp"
+        android:paddingEnd="48dp"
+        android:paddingBottom="8dp"
+        android:textAppearance="@style/TextAppearance.MaterialComponents.Body2"
+        android:textColorHint="@color/colorBtBackTxt"
+        app:layout_constraintEnd_toStartOf="@+id/gl_end"
+        app:layout_constraintStart_toEndOf="@+id/bt_back"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/iv_search"
+        android:layout_width="32dp"
+        android:layout_height="32dp"
+        android:layout_marginStart="8dp"
+        android:background="?selectableItemBackgroundBorderless"
+        android:padding="8dp"
+        android:src="@drawable/ic_search"
+        app:layout_constraintBottom_toBottomOf="@+id/et_search"
+        app:layout_constraintStart_toStartOf="@+id/et_search"
+        app:layout_constraintTop_toTopOf="@+id/et_search" />
+
+    <ImageView
+        android:id="@+id/iv_location"
+        android:layout_width="32dp"
+        android:layout_height="32dp"
+        android:layout_marginEnd="8dp"
+        android:background="?selectableItemBackgroundBorderless"
+        android:padding="8dp"
+        android:src="@drawable/ic_pin"
+        app:layout_constraintBottom_toBottomOf="@+id/et_search"
+        app:layout_constraintEnd_toEndOf="@+id/et_search"
+        app:layout_constraintTop_toTopOf="@+id/et_search" />
+
+
+    <Button
+        android:id="@+id/bt_filter"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:backgroundTint="@color/colorBtFilter"
+        android:fontFamily="@font/sf_pro_display_regular"
+        android:gravity="center"
+        android:text="@string/filter"
+        android:visibility="gone"
+        android:textAppearance="@style/TextAppearance.MaterialComponents.Body2"
+        android:textColor="@color/colorTextPrimary"
+        app:icon="@drawable/ic_filter"
+        app:iconSize="9dp"
+        app:iconGravity="textStart"
+        app:iconPadding="4dp"
+        app:iconTint="@color/colorTextPrimary"
+        app:layout_constraintStart_toStartOf="@+id/et_search"
+        app:layout_constraintTop_toBottomOf="@+id/et_search" />
+
+
+    <Button
+        android:id="@+id/bt_sort"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        app:backgroundTint="@color/colorBtFilter"
+        android:fontFamily="@font/sf_pro_display_regular"
+        android:text="@string/sort"
+        android:textAppearance="@style/TextAppearance.MaterialComponents.Body2"
+        android:textColor="@color/colorTextPrimary"
+        app:icon="@drawable/ic_sort"
+        app:iconGravity="textStart"
+        app:iconPadding="4dp"
+        android:visibility="gone"
+        app:iconTint="@color/colorTextPrimary"
+        app:layout_constraintStart_toEndOf="@+id/bt_filter"
+        app:layout_constraintTop_toBottomOf="@+id/et_search" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rv_search"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:clipToPadding="false"
+        android:orientation="vertical"
+        android:paddingTop="16dp"
+        android:paddingBottom="24dp"
+        app:layoutManager="androidx.recyclerview.widget.StaggeredGridLayoutManager"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/bt_filter"
+        app:spanCount="3" />
+
+    <include
+        android:id="@+id/empty_file"
+        layout="@layout/layout_search_empty_file"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/bt_filter" />
+ <include
+        android:id="@+id/empty_file_search_internet"
+        layout="@layout/layout_internet_disconnect"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/bt_filter" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/gl_start"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_begin="16dp" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/gl_end"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_end="16dp" />
+</androidx.constraintlayout.widget.ConstraintLayout>
+

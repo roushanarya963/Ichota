@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <TextView
+        android:id="@+id/tv_notifications_badge"
+        android:layout_width="18dp"
+        android:layout_height="18dp"
+        android:layout_gravity="top|center_horizontal"
+        android:layout_marginLeft="9dp"
+        android:background="@drawable/badge_view"
+        android:backgroundTint="@color/colorAccent"
+        android:gravity="center"
+        tools:text="1000"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:textColor="@android:color/white"
+        android:textSize="12sp"
+        tools:ignore="MissingConstraints" />
+</androidx.constraintlayout.widget.ConstraintLayout>

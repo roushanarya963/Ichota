@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "917642443766",
+    "project_id": "ichota-9c391",
+    "storage_bucket": "ichota-9c391.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:917642443766:android:6e12c81596a6ae1ab5e5d7",
+        "android_client_info": {
+          "package_name": "com.ichota"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "917642443766-hej7um00ma5ncit0s4ro87nvddlj780r.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.ichota",
+            "certificate_hash": "ba16c71e69ba438abd8d82d3c3ff8f41a9a9da97"
+          }
+        },
+        {
+          "client_id": "917642443766-bj2f4usiq1c8rb1dmkad7aooe4cdeme8.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDdBFy-NyGeTPky3E-KHvqT4gdOz5GHmhU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "917642443766-bj2f4usiq1c8rb1dmkad7aooe4cdeme8.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

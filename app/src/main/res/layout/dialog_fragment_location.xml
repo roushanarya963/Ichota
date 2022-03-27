@@ -1,0 +1,205 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    tools:context=".dialogs.LocationDialogFragment">
+
+    <TextView
+        android:id="@+id/tv_location_header"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:fontFamily="@font/sf_pro_display_semibold"
+        android:text="@string/location"
+        android:textColor="@color/colorTextPrimary"
+        android:textSize="22sp"
+        app:layout_constraintStart_toStartOf="@+id/gl_start"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/bt_reset"
+        android:layout_width="wrap_content"
+        style="@style/Widget.MaterialComponents.Button.TextButton.Dialog"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="4dp"
+        android:fontFamily="@font/sf_pro_display_medium"
+        android:textAppearance="@style/TextAppearance.MaterialComponents.Body1"
+        android:hapticFeedbackEnabled="true"
+        android:text="@string/reset"
+        app:layout_constraintBottom_toBottomOf="@+id/tv_location_header"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/tv_location_header"
+        app:rippleColor="@android:color/transparent" />
+
+
+    <TextView
+        android:id="@+id/tv_location_sub_header"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:fontFamily="@font/sf_pro_display_semibold"
+        android:text="@string/location"
+        android:textColor="@color/colorLocationSubHeader"
+        android:textSize="12sp"
+        app:layout_constraintStart_toStartOf="@+id/gl_start"
+        app:layout_constraintTop_toBottomOf="@+id/tv_location_header" />
+
+    <TextView
+        android:id="@+id/tv_current_location"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:background="@drawable/bg_et_search"
+        android:paddingStart="56dp"
+        android:paddingTop="16dp"
+        android:paddingBottom="16dp"
+        android:paddingEnd="100dp"
+        tools:text="Adelanto,Calefornia"
+        android:textAppearance="@style/TextAppearance.MaterialComponents.Body2"
+        android:textColor="@color/colorPrimary"
+
+        app:layout_constraintEnd_toStartOf="@+id/gl_end"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/gl_start"
+        app:layout_constraintTop_toBottomOf="@+id/tv_location_sub_header" />
+
+    <ImageView
+
+        android:id="@+id/iv_location"
+        android:layout_width="24dp"
+        android:layout_height="24dp"
+        android:layout_marginStart="16dp"
+        android:src="@drawable/ic_location"
+        app:layout_constraintBottom_toBottomOf="@+id/tv_current_location"
+        app:layout_constraintStart_toStartOf="@+id/tv_current_location"
+        app:layout_constraintTop_toTopOf="@+id/tv_current_location" />
+
+
+    <Button
+        android:id="@+id/bt_edit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        style="@style/Widget.MaterialComponents.Button"
+        android:fontFamily="@font/sf_pro_display_semibold"
+        android:text="@string/edit"
+        app:backgroundTint="@color/colorPrimary"
+        android:textAppearance="@style/TextAppearance.MaterialComponents.Caption"
+        app:layout_constraintBottom_toBottomOf="@+id/tv_current_location"
+        app:layout_constraintEnd_toEndOf="@+id/tv_current_location"
+        app:layout_constraintTop_toTopOf="@+id/tv_current_location"
+        app:shapeAppearance="@style/ShapeAppearance.App.SmallComponents_round_8" />
+
+
+    <TextView
+        android:id="@+id/tv_distance_header"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:fontFamily="@font/sf_pro_display_semibold"
+        android:text="@string/distaneMiles"
+        android:textColor="@color/colorLocationSubHeader"
+        android:textSize="12sp"
+        app:layout_constraintStart_toStartOf="@+id/gl_start"
+        app:layout_constraintTop_toBottomOf="@+id/tv_current_location" />
+
+
+    <com.google.android.material.slider.Slider
+        android:id="@+id/slider_distance"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:valueFrom="5.0"
+        android:valueTo="100.0"
+        app:layout_constraintEnd_toStartOf="@+id/gl_end"
+        app:layout_constraintStart_toStartOf="@+id/gl_start"
+        app:layout_constraintTop_toBottomOf="@+id/tv_distance_header"
+        app:thumbColor="@color/colorPrimary"
+        app:thumbElevation="4dp"
+        app:thumbRadius="12dp"
+        app:trackColorInactive="@color/colorTrackInactive"
+        app:thumbStrokeColor="@color/colorWhite"
+        app:thumbStrokeWidth="3dp"
+        app:trackHeight="8dp" />
+
+    <TextView
+        android:id="@+id/tv_distance_initial_value"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginBottom="36dp"
+        android:fontFamily="@font/sf_pro_display_regular"
+        android:text="5"
+        android:textAppearance="@style/TextAppearance.MaterialComponents.Caption"
+        android:textColor="@color/colorBtBackTxt"
+        app:layout_constraintBottom_toBottomOf="@+id/slider_distance"
+        app:layout_constraintStart_toStartOf="@+id/gl_start" />
+
+    <TextView
+        android:id="@+id/tv_distance_final_value"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="36dp"
+        android:fontFamily="@font/sf_pro_display_regular"
+        android:text="@string/max"
+        android:textAppearance="@style/TextAppearance.MaterialComponents.Caption"
+        android:textColor="@color/colorBtBackTxt"
+        app:layout_constraintBottom_toBottomOf="@+id/slider_distance"
+        app:layout_constraintEnd_toEndOf="@+id/slider_distance" />
+
+
+    <Button
+        android:id="@+id/bt_cancel"
+        android:layout_width="0dp"
+        android:layout_height="60dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="8dp"
+        android:backgroundTint="@color/colorWhite"
+        android:fontFamily="@font/sf_pro_display_medium"
+        android:text="@string/cancel"
+        android:layout_marginBottom="24dp"
+        android:textAppearance="@style/TextAppearance.MaterialComponents.Body2"
+        android:textColor="@color/colorPrimary"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/bt_apply"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="@+id/gl_start"
+        app:layout_constraintTop_toBottomOf="@+id/slider_distance"
+        app:shapeAppearance="@style/ShapeAppearance.App.SmallComponents_round_12"
+        app:strokeColor="@color/colorPrimary"
+        app:strokeWidth="1dp" />
+
+    <Button
+        android:id="@+id/bt_apply"
+        android:layout_width="0dp"
+        android:layout_height="60dp"
+        android:layout_marginStart="8dp"
+        android:fontFamily="@font/sf_pro_display_medium"
+        android:text="@string/apply"
+        android:textColor="@color/colorWhite"
+        app:backgroundTint="@color/colorPrimary"
+        android:textAppearance="@style/TextAppearance.MaterialComponents.Body2"
+        app:layout_constraintBottom_toBottomOf="@+id/bt_cancel"
+        app:layout_constraintEnd_toStartOf="@+id/gl_end"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/bt_cancel"
+        app:layout_constraintTop_toTopOf="@+id/bt_cancel"
+        app:shapeAppearance="@style/ShapeAppearance.App.SmallComponents_round_12" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/gl_start"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_begin="16dp" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/gl_end"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_end="16dp" />
+</androidx.constraintlayout.widget.ConstraintLayout>

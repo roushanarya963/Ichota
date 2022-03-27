@@ -1,0 +1,302 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:scrollbars="none">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:focusable="true"
+        android:focusableInTouchMode="true"
+        tools:context=".fragments.AddPostFragment">
+
+        <ImageView
+            android:id="@+id/iv_cover_pic"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            app:layout_constraintDimensionRatio="1:1"
+            android:adjustViewBounds="true"
+            android:scaleType="centerCrop"
+            android:src="@drawable/img_placeholder"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/fab_back"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="4dp"
+            android:layout_marginTop="8dp"
+            android:hapticFeedbackEnabled="true"
+            android:src="@drawable/ic_back"
+            app:backgroundTint="@color/colorPrimary"
+            app:borderWidth="0dp"
+            app:fabCustomSize="28dp"
+            app:fabSize="mini"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:maxImageSize="16dp"
+            app:tint="@color/colorWhite" />
+
+        <TextView
+            android:id="@+id/tv_steps"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/sf_pro_text_semibold"
+            android:gravity="center"
+            android:text="Step 1 of 2"
+            android:textColor="@color/colorTextPrimary"
+            android:textSize="16sp"
+            app:layout_constraintBottom_toBottomOf="@+id/fab_back"
+            app:layout_constraintEnd_toStartOf="@+id/fab_bin"
+            app:layout_constraintStart_toEndOf="@+id/fab_back"
+            app:layout_constraintTop_toTopOf="@+id/fab_back" />
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/fab_bin"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="4dp"
+            android:src="@drawable/ic_trash_can"
+            app:backgroundTint="@color/colorGrey_200_opacity_50"
+            app:borderWidth="0dp"
+            app:fabCustomSize="28dp"
+            app:fabSize="mini"
+            app:layout_constraintBottom_toBottomOf="@+id/fab_back"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/fab_back"
+            app:maxImageSize="16dp"
+            app:shapeAppearanceOverlay="@style/ShapeAppearance.App.SmallComponents_round_12"
+            app:tint="@color/colorWhite" />
+
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/fab_add_img"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
+            android:src="@drawable/ic_capture"
+            app:backgroundTint="@color/colorPrimary"
+            app:borderWidth="0dp"
+            app:layout_constraintBottom_toBottomOf="@+id/iv_cover_pic"
+            app:layout_constraintStart_toStartOf="@+id/gl_start"
+            app:shapeAppearanceOverlay="@style/ShapeAppearance.App.Image_round_16"
+            app:tint="@color/colorWhite" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rv_post_imgs"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
+            android:orientation="horizontal"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            app:layout_constraintBottom_toBottomOf="@+id/iv_cover_pic"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/fab_add_img"
+            app:layout_constraintTop_toTopOf="@+id/fab_add_img"
+            tools:itemCount="5"
+            tools:listitem="@layout/adapter_img" />
+
+        <TextView
+            android:id="@+id/tv_drag_description"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:fontFamily="@font/sf_pro_display_regular"
+            android:text="@string/dragImages"
+            android:textAppearance="@style/TextAppearance.MaterialComponents.Caption"
+            android:textColor="@color/colorTextPrimary"
+            app:layout_constraintEnd_toStartOf="@+id/gl_end"
+            app:layout_constraintStart_toStartOf="@+id/gl_start"
+            app:layout_constraintTop_toBottomOf="@+id/iv_cover_pic" />
+
+        <TextView
+            android:id="@+id/tv_service_info_header"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:fontFamily="@font/sf_pro_text_medium"
+            android:text="@string/serviceInfo"
+            android:textAppearance="@style/TextAppearance.MaterialComponents.Body2"
+            android:textColor="@color/colorTextPrimary"
+            app:layout_constraintEnd_toStartOf="@+id/gl_end"
+            app:layout_constraintStart_toStartOf="@+id/gl_start"
+            app:layout_constraintTop_toBottomOf="@+id/tv_drag_description" />
+
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/input_layout_service_title"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            app:boxCornerRadiusBottomEnd="16dp"
+            app:boxCornerRadiusBottomStart="16dp"
+            app:boxCornerRadiusTopEnd="16dp"
+            app:boxCornerRadiusTopStart="16dp"
+            app:layout_constraintEnd_toStartOf="@+id/gl_end"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toStartOf="@+id/gl_start"
+            app:layout_constraintTop_toBottomOf="@+id/tv_service_info_header">
+
+            <EditText
+                android:id="@+id/et_service_title"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/sf_pro_display_regular"
+                android:hint="@string/serviceTitle"
+                android:inputType="textPersonName"
+                android:textColor="@color/colorTextPrimary"
+                android:textSize="14sp" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/input_layout_service_desp"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:hint="@string/serviceDescription"
+            app:boxCornerRadiusBottomEnd="16dp"
+            app:boxCornerRadiusBottomStart="16dp"
+            app:boxCornerRadiusTopEnd="16dp"
+            app:boxCornerRadiusTopStart="16dp"
+            app:layout_constraintEnd_toStartOf="@+id/gl_end"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toStartOf="@+id/gl_start"
+            app:layout_constraintTop_toBottomOf="@+id/input_layout_service_title">
+
+            <EditText
+                android:id="@+id/et_service_description"
+                android:layout_width="match_parent"
+                android:layout_height="80dp"
+                android:fontFamily="@font/sf_pro_display_regular"
+                android:gravity="start"
+                android:inputType="textMultiLine"
+                android:textColor="@color/colorTextPrimary"
+                android:textSize="14sp"
+                app:layout_constraintEnd_toStartOf="@+id/gl_end"
+                app:layout_constraintHorizontal_bias="1.0"
+                app:layout_constraintStart_toStartOf="@+id/gl_start"
+                app:layout_constraintTop_toBottomOf="@+id/input_layout_service_title" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+
+        <TextView
+            android:id="@+id/tv_service_price_header"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/sf_pro_text_medium"
+            android:text="@string/serviceMinimumPrice"
+            android:textAppearance="@style/TextAppearance.MaterialComponents.Body2"
+            android:textColor="@color/colorTextPrimary"
+            app:layout_constraintBottom_toBottomOf="@+id/service_price_input_layout"
+            app:layout_constraintStart_toStartOf="@+id/gl_start"
+            app:layout_constraintTop_toTopOf="@+id/service_price_input_layout" />
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/service_price_input_layout"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            app:boxCornerRadiusBottomEnd="16dp"
+            app:boxCornerRadiusBottomStart="16dp"
+            app:boxCornerRadiusTopEnd="16dp"
+            app:boxCornerRadiusTopStart="16dp"
+            app:layout_constraintEnd_toStartOf="@+id/gl_end"
+            app:layout_constraintTop_toBottomOf="@+id/input_layout_service_desp"
+            app:prefixText="$">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/et_service_price"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/sf_pro_display_medium"
+                android:gravity="center"
+                android:inputType="number"
+                android:text=""
+                android:minWidth="100dp"
+                android:maxLength="10"
+                android:textColor="@color/colorTextPrimary"
+                android:textSize="14sp" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+
+        <TextView
+            android:id="@+id/tv_category_header"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/sf_pro_text_medium"
+            android:text="@string/category"
+            android:textAppearance="@style/TextAppearance.MaterialComponents.Body2"
+            android:textColor="@color/colorTextPrimary"
+            app:layout_constraintBottom_toBottomOf="@+id/bt_category"
+            app:layout_constraintStart_toStartOf="@+id/gl_start"
+            app:layout_constraintTop_toTopOf="@+id/bt_category" />
+
+        <Button
+            android:id="@+id/bt_category"
+            style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/sf_pro_text_regular"
+            android:hapticFeedbackEnabled="true"
+            android:padding="0dp"
+            android:layout_marginStart="8dp"
+            android:maxLines="1"
+            android:ellipsize="end"
+            android:textAlignment="textEnd"
+            android:text="Select Category"
+            android:textAllCaps="false"
+            android:textColor="@color/colorTextPrimary"
+            android:textSize="14sp"
+            app:icon="@drawable/ic_next"
+            app:iconGravity="end"
+            app:iconSize="16dp"
+            app:iconTint="@color/colorTextPrimary"
+            app:layout_constraintEnd_toStartOf="@+id/gl_end"
+            app:layout_constraintStart_toEndOf="@+id/tv_category_header"
+            app:layout_constraintTop_toBottomOf="@+id/service_price_input_layout"
+            app:rippleColor="@android:color/transparent"
+            app:strokeWidth="0dp" />
+        <Button
+            android:id="@+id/bt_continue"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="24dp"
+            android:backgroundTint="@color/colorPrimary"
+            android:fontFamily="@font/sf_pro_display_medium"
+            android:padding="16dp"
+            android:text="@string/Continue"
+            android:layout_marginTop="16dp"
+            android:textAppearance="@style/TextAppearance.MaterialComponents.Body2"
+            android:textColor="@color/colorWhite"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/gl_end"
+            app:layout_constraintStart_toStartOf="@+id/gl_start"
+            app:layout_constraintTop_toBottomOf="@+id/bt_category"
+            app:shapeAppearance="@style/ShapeAppearance.App.SmallComponents_round_12" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/gl_start"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_begin="16dp" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/gl_end"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_end="16dp" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>

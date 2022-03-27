@@ -1,0 +1,821 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/colorBgAccount"
+        android:clipToPadding="false"
+        android:paddingBottom="24dp"
+        android:scrollbars="none">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            tools:context=".profile.AccountFragment">
+
+
+            <com.google.android.material.appbar.AppBarLayout
+                android:id="@+id/app_bar_layout"
+                style="@style/Widget.MaterialComponents.AppBarLayout.Surface"
+                android:layout_width="0dp"
+                android:layout_height="83dp"
+                android:elevation="0dp"
+                app:elevation="0dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="16dp"
+                    android:fontFamily="@font/sf_pro_display_bold"
+                    android:paddingStart="16dp"
+                    android:paddingEnd="16dp"
+                    android:text="@string/account"
+                    android:textAppearance="@style/TextAppearance.MaterialComponents.Headline4"
+                    android:textColor="@color/colorTextPrimary" />
+
+            </com.google.android.material.appbar.AppBarLayout>
+
+
+            <TextView
+                android:id="@+id/tv_profile_header"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:fontFamily="@font/sf_pro_display_semibold"
+                android:text="@string/profile"
+                android:textAllCaps="true"
+                android:textAppearance="@style/TextAppearance.MaterialComponents.Caption"
+                app:layout_constraintStart_toStartOf="@+id/gl_start"
+                app:layout_constraintTop_toBottomOf="@+id/app_bar_layout" />
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/card_profile"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:elevation="0dp"
+                app:cardBackgroundColor="@color/colorWhite"
+                app:cardCornerRadius="16dp"
+                app:cardElevation="0dp"
+                app:layout_constraintEnd_toStartOf="@+id/gl_end"
+                app:layout_constraintStart_toStartOf="@+id/gl_start"
+                app:layout_constraintTop_toBottomOf="@+id/tv_profile_header">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/cl_profile"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="?attr/selectableItemBackgroundBorderless"
+                    android:padding="16dp">
+
+                    <com.google.android.material.imageview.ShapeableImageView
+                        android:id="@+id/iv_user"
+                        android:layout_width="0dp"
+                        android:layout_height="50dp"
+                        android:padding="2dp"
+                        android:scaleType="centerCrop"
+                        tools:src="@drawable/img_profile_demo"
+                        app:layout_constraintDimensionRatio="1:1"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:shapeAppearance="@style/ShapeAppearance.App.Image_round_16"
+                        app:strokeColor="@color/colorImageBorder"
+                        app:strokeWidth="2dp"
+
+                        />
+
+                    <TextView
+                        android:id="@+id/tv_user_name"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="24dp"
+                        android:layout_marginEnd="8dp"
+                        android:fontFamily="@font/sf_pro_display_bold"
+                        tools:text="Bobby Veldez"
+                        android:textColor="@color/colorTextPrimary"
+                        android:textSize="15sp"
+                        app:layout_constraintBottom_toBottomOf="@+id/iv_user"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toEndOf="@+id/iv_user"
+                        app:layout_constraintTop_toTopOf="@+id/iv_user"
+                        app:layout_constraintVertical_bias="0.089999974" />
+
+                    <TextView
+                        android:id="@+id/tv_user_joined_date"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="4dp"
+                        android:fontFamily="@font/sf_pro_display_regular"
+                        tools:text="Joined Dec 2020 - Rancho Cucamonga, CA"
+                        android:textColor="@color/colorTextPrimary"
+                        android:textSize="10sp"
+                        app:layout_constraintEnd_toEndOf="@+id/tv_user_name"
+                        app:layout_constraintStart_toStartOf="@+id/tv_user_name"
+                        app:layout_constraintTop_toBottomOf="@+id/tv_user_name" />
+
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <ImageButton
+                    android:id="@+id/ib_next_profile"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical|end"
+                    android:background="@android:color/transparent"
+                    android:hapticFeedbackEnabled="true"
+                    android:padding="16dp"
+                    android:src="@drawable/ic_next"
+                    app:layout_constraintEnd_toEndOf="@+id/tv_user_name"
+
+                    tools:layout_editor_absoluteY="16dp" />
+
+
+            </androidx.cardview.widget.CardView>
+
+            <TextView
+                android:id="@+id/tv_settings_header"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:fontFamily="@font/sf_pro_display_semibold"
+                android:text="@string/settings"
+                android:textAllCaps="true"
+                android:textAppearance="@style/TextAppearance.MaterialComponents.Caption"
+                app:layout_constraintStart_toStartOf="@+id/gl_start"
+                app:layout_constraintTop_toBottomOf="@+id/card_profile" />
+
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/card_settings"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:elevation="0dp"
+                app:cardBackgroundColor="@color/colorWhite"
+                app:cardCornerRadius="16dp"
+                app:cardElevation="0dp"
+                app:layout_constraintEnd_toStartOf="@+id/gl_end"
+                app:layout_constraintStart_toStartOf="@+id/gl_start"
+                app:layout_constraintTop_toBottomOf="@+id/tv_settings_header">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <Button
+                        android:id="@+id/bt_user_name"
+                        style="@style/Widget.MaterialComponents.Button.TextButton"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/sf_pro_display_medium"
+                        android:hapticFeedbackEnabled="true"
+                        android:paddingStart="16dp"
+                        android:paddingEnd="16dp"
+                        tools:text="name"
+                        android:hint="@string/yourName"
+                        android:textAlignment="textStart"
+                        android:textAppearance="@style/TextAppearance.MaterialComponents.Body2"
+                        android:textColor="@color/colorTextPrimary"
+                        app:icon="@drawable/ic_next"
+                        app:iconGravity="end"
+                        app:iconTint="@null"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+                    <View
+                        android:id="@+id/view_user_name"
+                        android:layout_width="0dp"
+                        android:layout_height="0.8dp"
+                        android:layout_marginStart="16dp"
+                        android:layout_marginEnd="16dp"
+                        android:background="@color/colorDividerAccount"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/bt_user_name" />
+
+                    <Button
+                        android:id="@+id/bt_user_num"
+                        style="@style/Widget.MaterialComponents.Button.TextButton"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/sf_pro_display_medium"
+                        android:hapticFeedbackEnabled="true"
+                        android:paddingStart="16dp"
+                        android:paddingEnd="16dp"
+                        tools:text="number"
+                        android:hint="@string/phoneNumber"
+                        android:textAlignment="textStart"
+                        android:textAppearance="@style/TextAppearance.MaterialComponents.Body2"
+                        android:textColor="@color/colorTextPrimary"
+                        app:icon="@drawable/ic_next"
+                        app:iconGravity="end"
+                        app:iconTint="@null"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/bt_user_name" />
+                    <View
+                        android:id="@+id/view_user_num"
+                        android:layout_width="0dp"
+                        android:layout_height="0.8dp"
+                        android:layout_marginStart="16dp"
+                        android:layout_marginEnd="16dp"
+                        android:background="@color/colorDividerAccount"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/bt_user_num" />
+
+
+                    <Button
+                        android:id="@+id/bt_user_email"
+                        style="@style/Widget.MaterialComponents.Button.TextButton"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/sf_pro_display_medium"
+                        android:hapticFeedbackEnabled="true"
+                        android:paddingStart="16dp"
+                        android:paddingEnd="16dp"
+                        tools:text="email"
+                        android:hint="@string/yourEmail"
+                        android:textAlignment="textStart"
+                        android:textAppearance="@style/TextAppearance.MaterialComponents.Body2"
+                        android:textColor="@color/colorTextPrimary"
+                        app:icon="@drawable/ic_next"
+                        app:iconGravity="end"
+                        app:iconTint="@null"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/bt_user_num" />
+                    <View
+                        android:id="@+id/view_user_email"
+                        android:layout_width="0dp"
+                        android:layout_height="0.8dp"
+                        android:layout_marginStart="16dp"
+                        android:layout_marginEnd="16dp"
+                        android:background="@color/colorDividerAccount"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/bt_user_email" />
+
+
+                    <Button
+                        android:id="@+id/bt_connect_facebook"
+                        style="@style/Widget.MaterialComponents.Button.TextButton"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/sf_pro_display_medium"
+                        android:hapticFeedbackEnabled="true"
+                        android:paddingStart="16dp"
+                        android:paddingEnd="16dp"
+                        android:text="@string/connectFacebook"
+                        android:textAlignment="textStart"
+                        android:textAppearance="@style/TextAppearance.MaterialComponents.Body2"
+                        android:textColor="@color/colorTextPrimary"
+                        app:icon="@drawable/ic_next"
+                        app:iconGravity="end"
+                        app:iconTint="@null"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/view_user_email" />
+                    <View
+                        android:id="@+id/view_connect_social_media"
+                        android:layout_width="0dp"
+                        android:layout_height="0.8dp"
+                        android:layout_marginStart="16dp"
+                        android:layout_marginEnd="16dp"
+                        android:background="@color/colorDividerAccount"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/bt_connect_facebook" />
+
+                    <Button
+                        android:id="@+id/bt_change_password"
+                        style="@style/Widget.MaterialComponents.Button.TextButton"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/sf_pro_display_medium"
+                        android:hapticFeedbackEnabled="true"
+                        android:paddingStart="16dp"
+                        android:paddingEnd="16dp"
+                        android:text="@string/changePassword"
+                        android:textAlignment="textStart"
+                        android:textAppearance="@style/TextAppearance.MaterialComponents.Body2"
+                        android:textColor="@color/colorTextPrimary"
+                        app:icon="@drawable/ic_next"
+                        app:iconGravity="end"
+                        app:iconTint="@null"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/view_connect_social_media" />
+                    <View
+                        android:id="@+id/view_change_password"
+                        android:layout_width="0dp"
+                        android:layout_height="0.8dp"
+                        android:layout_marginStart="16dp"
+                        android:layout_marginEnd="16dp"
+                        android:background="@color/colorDividerAccount"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/bt_change_password" />
+
+
+                    <Button
+                        android:id="@+id/bt_user_location"
+                        style="@style/Widget.MaterialComponents.Button.TextButton"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/sf_pro_display_medium"
+                        android:hapticFeedbackEnabled="true"
+                        android:paddingStart="16dp"
+                        android:paddingEnd="16dp"
+                        tools:text="location"
+                        android:hint="@string/yourApproximateLocation"
+                        android:textAlignment="textStart"
+                        android:textAppearance="@style/TextAppearance.MaterialComponents.Body2"
+                        android:textColor="@color/colorTextPrimary"
+                        app:icon="@drawable/ic_next"
+                        app:iconGravity="end"
+                        app:iconTint="@null"
+                        android:maxLines="1"
+                        android:ellipsize="end"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/view_change_password" />
+
+
+
+
+
+
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+            </androidx.cardview.widget.CardView>
+
+
+
+            <TextView
+                android:id="@+id/tv_general_header"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:fontFamily="@font/sf_pro_display_semibold"
+                android:text="@string/general"
+                android:textAllCaps="true"
+                android:textAppearance="@style/TextAppearance.MaterialComponents.Caption"
+                app:layout_constraintStart_toStartOf="@+id/gl_start"
+                app:layout_constraintTop_toBottomOf="@+id/card_settings" />
+
+
+
+
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/card_general"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:elevation="0dp"
+                app:cardBackgroundColor="@color/colorWhite"
+                app:cardCornerRadius="16dp"
+                app:cardElevation="0dp"
+                app:layout_constraintEnd_toStartOf="@+id/gl_end"
+                app:layout_constraintStart_toStartOf="@+id/gl_start"
+                app:layout_constraintTop_toBottomOf="@+id/tv_general_header">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+                    <Button
+                        android:id="@+id/bt_purchase_sale"
+                        style="@style/Widget.MaterialComponents.Button.TextButton"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/sf_pro_display_medium"
+                        android:hapticFeedbackEnabled="true"
+                        android:paddingStart="16dp"
+                        android:paddingEnd="16dp"
+                        android:text="@string/purchasesAndSales"
+                        android:textAlignment="textStart"
+                        android:textAppearance="@style/TextAppearance.MaterialComponents.Body2"
+                        android:textColor="@color/colorTextPrimary"
+                        app:icon="@drawable/ic_next"
+                        app:iconGravity="end"
+                        app:iconTint="@null"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                       app:layout_constraintTop_toTopOf="parent"/>
+                    <View
+                        android:id="@+id/view_divider_purchase_sale"
+                        android:layout_width="0dp"
+                        android:layout_height="0.8dp"
+                        android:layout_marginStart="16dp"
+                        android:layout_marginEnd="16dp"
+                        android:background="@color/colorDividerAccount"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/bt_purchase_sale" />
+
+
+                    <Button
+                        android:id="@+id/bt_payment_method"
+                        style="@style/Widget.MaterialComponents.Button.TextButton"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/sf_pro_display_medium"
+                        android:paddingStart="16dp"
+                        android:paddingEnd="16dp"
+                        android:text="@string/paymentMethod"
+                        android:textAlignment="textStart"
+                        android:textAppearance="@style/TextAppearance.MaterialComponents.Body2"
+                        android:textColor="@color/colorTextPrimary"
+                        app:icon="@drawable/ic_next"
+                        app:iconGravity="end"
+                        app:iconTint="@null"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/view_divider_purchase_sale" />
+
+
+                    <View
+                        android:id="@+id/view_divider_payment_method"
+                        android:layout_width="0dp"
+                        android:layout_height="0.8dp"
+                        android:layout_marginStart="16dp"
+                        android:layout_marginEnd="16dp"
+                        android:background="@color/colorDividerAccount"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/bt_payment_method" />
+                    <Button
+                        android:id="@+id/bt_notification"
+                        style="@style/Widget.MaterialComponents.Button.TextButton"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/sf_pro_display_medium"
+                        android:paddingStart="16dp"
+                        android:paddingEnd="16dp"
+                        android:visibility="gone"
+                        android:text="@string/notifications"
+                        android:textAlignment="textStart"
+                        android:textAppearance="@style/TextAppearance.MaterialComponents.Body2"
+                        android:textColor="@color/colorTextPrimary"
+                        app:icon="@drawable/ic_next"
+                        app:iconGravity="end"
+                        app:iconTint="@null"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/view_divider_payment_method" />
+
+                    <View
+                        android:id="@+id/view_divider_notification_method"
+                        android:layout_width="0dp"
+                        android:layout_height="0.8dp"
+                        android:layout_marginStart="16dp"
+                        android:layout_marginEnd="16dp"
+                        android:background="@color/colorDividerAccount"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/bt_notification" />
+
+                    <Button
+                        android:id="@+id/bt_favourite"
+                        style="@style/Widget.MaterialComponents.Button.TextButton"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/sf_pro_display_medium"
+                        android:paddingStart="16dp"
+                        android:paddingEnd="16dp"
+                        android:text="@string/favourites"
+                        android:textAlignment="textStart"
+                        android:textAppearance="@style/TextAppearance.MaterialComponents.Body2"
+                        android:textColor="@color/colorTextPrimary"
+                        app:icon="@drawable/ic_next"
+                        app:iconGravity="end"
+                        app:iconTint="@null"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/bt_notification" />
+                    <View
+                        android:id="@+id/view_divider_favorite_method"
+                        android:layout_width="0dp"
+                        android:layout_height="0.8dp"
+                        android:layout_marginStart="16dp"
+                        android:layout_marginEnd="16dp"
+                        android:background="@color/colorDividerAccount"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/bt_favourite"
+                        />
+                    <Button
+                        android:id="@+id/bt_add_emergency_contact"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        style="@style/Widget.MaterialComponents.Button.TextButton"
+                        android:fontFamily="@font/sf_pro_display_medium"
+                        android:paddingStart="16dp"
+                        android:paddingEnd="16dp"
+                        android:text="@string/addemergencycontact"
+                        android:textAlignment="textStart"
+                        android:textAppearance="@style/TextAppearance.MaterialComponents.Body2"
+                        android:textColor="@color/colorTextPrimary"
+                        app:icon="@drawable/ic_next"
+                        app:iconGravity="end"
+                        app:iconTint="@null"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/view_divider_favorite_method"
+                        />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+            </androidx.cardview.widget.CardView>
+
+
+            <TextView
+                android:id="@+id/tv_account_header"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:fontFamily="@font/sf_pro_display_semibold"
+                android:text="@string/account"
+                android:textAllCaps="true"
+                android:textAppearance="@style/TextAppearance.MaterialComponents.Caption"
+                app:layout_constraintStart_toStartOf="@+id/gl_start"
+                app:layout_constraintTop_toBottomOf="@+id/card_general" />
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/card_account"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:layout_marginBottom="16dp"
+                android:elevation="0dp"
+                app:cardBackgroundColor="@color/colorWhite"
+                app:cardCornerRadius="16dp"
+                app:cardElevation="0dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/gl_end"
+                app:layout_constraintStart_toStartOf="@+id/gl_start"
+                app:layout_constraintTop_toBottomOf="@+id/tv_account_header">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+
+                    <Button
+                        android:id="@+id/bt_public_profile"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/sf_pro_display_medium"
+                        android:text="@string/publicProfile"
+                        android:textAlignment="textStart"
+                        android:paddingStart="16dp"
+                        android:paddingEnd="16dp"
+                        app:icon="@drawable/ic_next"
+                        app:iconGravity="end"
+                        app:iconTint="@null"
+                        style="@style/Widget.MaterialComponents.Button.TextButton"
+                        android:textAppearance="@style/TextAppearance.MaterialComponents.Body2"
+                        android:textColor="@color/colorTextPrimary"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <View
+                        android:id="@+id/view_divider_publicProfile"
+                        android:layout_width="0dp"
+                        android:layout_height="0.8dp"
+                        android:layout_marginStart="16dp"
+                        android:layout_marginEnd="16dp"
+                        android:background="@color/colorDividerAccount"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/bt_public_profile" />
+
+
+                    <Button
+                        android:id="@+id/bt_account_verification"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/sf_pro_display_medium"
+                        android:text="@string/accountVerification"
+                        android:textAlignment="textStart"
+                        android:paddingStart="16dp"
+                        android:paddingEnd="16dp"
+                        app:icon="@drawable/ic_next"
+                        app:iconGravity="end"
+                        app:iconTint="@null"
+                        style="@style/Widget.MaterialComponents.Button.TextButton"
+                        android:textAppearance="@style/TextAppearance.MaterialComponents.Body2"
+                        android:textColor="@color/colorTextPrimary"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="@+id/view_divider_publicProfile" />
+
+
+
+                    <View
+                        android:id="@+id/view_divider_customProfileLink"
+                        android:layout_width="0dp"
+                        android:layout_height="0.8dp"
+                        android:layout_marginStart="16dp"
+                        android:layout_marginEnd="16dp"
+                        android:background="@color/colorDividerAccount"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/bt_account_verification" />
+
+
+
+
+
+                    <Button
+                        android:id="@+id/bt_help"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/sf_pro_display_medium"
+                        android:text="@string/help"
+                        android:textAlignment="textStart"
+                        android:paddingStart="16dp"
+                        android:paddingEnd="16dp"
+                        app:icon="@drawable/ic_next"
+                        app:iconGravity="end"
+                        app:iconTint="@null"
+                        style="@style/Widget.MaterialComponents.Button.TextButton"
+                        android:textAppearance="@style/TextAppearance.MaterialComponents.Body2"
+                        android:textColor="@color/colorTextPrimary"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/view_divider_customProfileLink" />
+
+
+
+                    <View
+                        android:id="@+id/view_divider_help"
+                        android:layout_width="0dp"
+                        android:layout_height="0.8dp"
+                        android:layout_marginStart="16dp"
+                        android:layout_marginEnd="16dp"
+                        android:background="@color/colorDividerAccount"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/bt_help" />
+
+
+                    <Button
+                        android:id="@+id/bt_community_forums"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/sf_pro_display_medium"
+                        android:text="@string/communityForums"
+                        android:textAlignment="textStart"
+                        android:paddingStart="16dp"
+                        android:paddingEnd="16dp"
+                        app:icon="@drawable/ic_next"
+                        app:iconGravity="end"
+                        app:iconTint="@null"
+                        style="@style/Widget.MaterialComponents.Button.TextButton"
+                        android:textAppearance="@style/TextAppearance.MaterialComponents.Body2"
+                        android:textColor="@color/colorTextPrimary"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/view_divider_help" />
+
+
+
+                    <View
+                        android:id="@+id/view_divider_community_forums"
+                        android:layout_width="0dp"
+                        android:layout_height="0.8dp"
+                        android:layout_marginStart="16dp"
+                        android:layout_marginEnd="16dp"
+                        android:background="@color/colorDividerAccount"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/bt_community_forums" />
+
+
+                    <Button
+                        android:id="@+id/bt_rate_us"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/sf_pro_display_medium"
+                        android:text="@string/rateUs"
+                        android:textAlignment="textStart"
+                        android:paddingStart="16dp"
+                        android:paddingEnd="16dp"
+                        app:icon="@drawable/ic_next"
+                        app:iconGravity="end"
+                        app:iconTint="@null"
+                        style="@style/Widget.MaterialComponents.Button.TextButton"
+                        android:textAppearance="@style/TextAppearance.MaterialComponents.Body2"
+                        android:textColor="@color/colorTextPrimary"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/view_divider_community_forums" />
+
+
+                    <View
+                        android:id="@+id/view_divider_rate_us"
+                        android:layout_width="0dp"
+                        android:layout_height="0.8dp"
+                        android:layout_marginStart="16dp"
+                        android:layout_marginEnd="16dp"
+                        android:background="@color/colorDividerAccount"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/bt_rate_us" />
+
+                    <Button
+                        android:id="@+id/bt_contact_support"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/sf_pro_display_medium"
+                        android:text="@string/contactSupport"
+                        android:textAlignment="textStart"
+                        android:paddingStart="16dp"
+                        android:paddingEnd="16dp"
+                        app:icon="@drawable/ic_next"
+                        app:iconGravity="end"
+                        app:iconTint="@null"
+                        style="@style/Widget.MaterialComponents.Button.TextButton"
+                        android:textAppearance="@style/TextAppearance.MaterialComponents.Body2"
+                        android:textColor="@color/colorTextPrimary"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/view_divider_rate_us" />
+
+
+
+                    <View
+                        android:id="@+id/view_divider_contact_support"
+                        android:layout_width="0dp"
+                        android:layout_height="0.8dp"
+                        android:layout_marginStart="16dp"
+                        android:layout_marginEnd="16dp"
+                        android:background="@color/colorDividerAccount"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/bt_contact_support" />
+
+                    <Button
+                        android:id="@+id/bt_logout"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/sf_pro_display_medium"
+                        android:text="@string/logout"
+                        android:textAlignment="textStart"
+                        android:paddingStart="16dp"
+                        android:paddingEnd="16dp"
+                        app:icon="@drawable/ic_next"
+                        app:iconGravity="end"
+                        app:iconTint="@color/colorPrimary"
+                        style="@style/Widget.MaterialComponents.Button.TextButton"
+                        android:textAppearance="@style/TextAppearance.MaterialComponents.Body2"
+                        android:textColor="@color/colorPrimary"
+                        app:layout_constraintEnd_toEndOf="parent"
+
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/view_divider_contact_support" />
+
+
+
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+            </androidx.cardview.widget.CardView>
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/gl_start"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintGuide_begin="16dp" />
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/gl_end"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintGuide_end="16dp" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
+
+
+    <include
+        android:id="@+id/auth_root"
+        layout="@layout/dialog_authorise_user"
+        android:visibility="gone" />
+
+</FrameLayout>

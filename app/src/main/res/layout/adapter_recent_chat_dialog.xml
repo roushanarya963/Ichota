@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:paddingBottom="8dp">
+
+    <com.google.android.material.imageview.ShapeableImageView
+        android:id="@+id/iv_user"
+        android:layout_width="0dp"
+        android:layout_height="60dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="8dp"
+        tools:src="@drawable/img_user_placeholder"
+        app:strokeWidth="0dp"
+        android:scaleType="centerCrop"
+        app:strokeColor="@color/colorImageBorder"
+        app:layout_constraintDimensionRatio="1:1"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:shapeAppearanceOverlay="@style/ShapeAppearance.App.CircularImage" />
+
+    <TextView
+        android:id="@+id/tv_unread_message_count"
+        android:layout_width="24dp"
+        android:layout_height="24dp"
+        android:background="@drawable/bg_circle_orange"
+        android:backgroundTint="@color/colorPrimary"
+        android:gravity="center"
+        android:maxLength="3"
+        android:visibility="gone"
+        android:textColor="@color/colorWhite"
+        android:textSize="8sp"
+        app:layout_constraintBottom_toBottomOf="@+id/iv_user"
+        app:layout_constraintEnd_toEndOf="@+id/iv_user"
+        tools:text="100" />
+
+
+    <TextView
+        android:id="@+id/tv_name"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="8dp"
+        android:fontFamily="@font/sf_pro_display_bold"
+        tools:text="Drake Russel"
+        android:textAppearance="@style/TextAppearance.MaterialComponents.Body2"
+        android:textColor="@color/colorTextPrimary"
+        app:layout_constraintEnd_toStartOf="@+id/iv_product"
+        app:layout_constraintStart_toEndOf="@+id/iv_user"
+        app:layout_constraintTop_toTopOf="@+id/iv_user" />
+
+    <TextView
+        android:id="@+id/tv_time"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/sf_pro_display_regular"
+        android:gravity="start"
+        tools:text="3 mins ago"
+        android:textColor="@color/colorTextSecondary"
+        android:textSize="12sp"
+        app:layout_constraintEnd_toEndOf="@+id/tv_message"
+        app:layout_constraintStart_toStartOf="@+id/tv_message"
+        app:layout_constraintTop_toBottomOf="@+id/tv_message" />
+
+    <TextView
+        android:id="@+id/tv_message"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:fontFamily="@font/sf_pro_display_regular"
+        android:textAppearance="@style/TextAppearance.MaterialComponents.Body2"
+        android:textColor="@color/colorTextPrimary"
+        tools:text="Lorem ipsum sit amet lorem ipsum sit amet lorem ipsum sit amet"
+        app:layout_constraintEnd_toStartOf="@+id/iv_product"
+        app:layout_constraintStart_toStartOf="@+id/tv_name"
+        app:layout_constraintTop_toBottomOf="@+id/tv_name" />
+
+    <com.google.android.material.imageview.ShapeableImageView
+        android:id="@+id/iv_product"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:layout_marginEnd="16dp"
+        tools:src="@drawable/app_logo"
+        android:scaleType="fitXY"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:shapeAppearanceOverlay="@style/ShapeAppearance.App.SmallComponents_round_12" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

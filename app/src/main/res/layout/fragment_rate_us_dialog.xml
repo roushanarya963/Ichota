@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".dialogs.RateUsDialogFragment">
+
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="60sp"
+            android:layout_height="60sp"
+            android:id="@+id/cardview_ichota"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:layout_marginTop="20dp">
+            <com.google.android.material.imageview.ShapeableImageView
+                android:id="@+id/ichota_icon"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@color/colorBlue900"
+                android:src="@drawable/ic_ichota"
+                />
+        </androidx.cardview.widget.CardView>
+        <TextView
+            android:id="@+id/tv_enjoying_ichota"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/enjoyingichota"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:textAppearance="@style/TextAppearance.MaterialComponents.Headline6"
+            app:layout_constraintTop_toBottomOf="@+id/cardview_ichota"
+            />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/taptostarttorate"
+            android:gravity="center"
+            android:id="@+id/tv_taptostartorate"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_enjoying_ichota"
+            android:textAppearance="@style/TextAppearance.MaterialComponents.Body1"
+            />
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="2sp"
+            android:id="@+id/view_margin"
+            android:background="@color/multiple_image_select_secondaryText"
+            app:layout_constraintTop_toBottomOf="@+id/tv_taptostartorate"
+            />
+        <androidx.appcompat.widget.AppCompatRatingBar
+            android:layout_width="wrap_content"
+            android:id="@+id/appcompact_rating_bar"
+            android:layout_height="40sp"
+            android:numStars="5"
+            android:layout_marginTop="8dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/view_margin"
+            />
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="2sp"
+            android:id="@+id/view_margin_two"
+            android:layout_marginTop="8dp"
+            android:background="@color/multiple_image_select_secondaryText"
+            app:layout_constraintTop_toBottomOf="@+id/appcompact_rating_bar"
+            />
+
+       <!-- <LinearLayout
+            android:id="@+id/relativelayout"
+            android:orientation="horizontal"
+            android:gravity="center"
+            app:layout_constraintTop_toBottomOf="@+id/view_margin_two"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/cancel"
+                android:id="@+id/tv_cancel"
+                tools:ignore="MissingConstraints" />
+            <View
+                android:id="@+id/view_margin_three"
+                android:layout_width="2sp"
+                android:layout_height="50dp"
+                android:background="@color/multiple_image_select_secondaryText"
+                app:layout_constraintLeft_toRightOf="@+id/tv_cancel"
+                tools:ignore="MissingConstraints" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/tv_submit"
+                android:text="@string/submit"
+                app:layout_constraintLeft_toRightOf="@+id/view_margin_three"
+                tools:ignore="MissingConstraints" />
+        </LinearLayout>-->
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.cardview.widget.CardView>

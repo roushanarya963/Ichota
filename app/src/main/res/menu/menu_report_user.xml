@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item android:id="@+id/menu_choose_option"
+        android:visible="false"
+        android:title="@string/chooseOptions"/>
+    <item android:id="@+id/menu_shareprofile"
+        android:title="@string/shareProfile"
+        />
+    <item android:id="@+id/menu_report_user"
+          android:title="@string/userReport"
+        />
+    <item android:id="@+id/menu_cancel"
+        android:title="@string/cancel"
+        />
+</menu>

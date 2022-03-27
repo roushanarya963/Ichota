@@ -1,0 +1,237 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+
+    <View
+        android:id="@+id/view_line_top"
+        android:layout_width="50dp"
+        android:layout_height="5dp"
+        android:layout_marginTop="24dp"
+        android:background="@drawable/bg_et_search"
+        android:backgroundTint="@color/colorGrey300"
+        app:layout_constraintEnd_toStartOf="@+id/gl_end"
+        app:layout_constraintStart_toStartOf="@+id/gl_start"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tv_safety_toolkit_header"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:fontFamily="@font/sf_pro_display_semibold"
+        android:gravity="center"
+        android:text="@string/safetyToolkit"
+        android:textAppearance="@style/TextAppearance.MaterialComponents.Body1"
+        android:textColor="@color/colorTextPrimary"
+        app:layout_constraintEnd_toStartOf="@+id/gl_end"
+        app:layout_constraintStart_toStartOf="@+id/gl_start"
+        app:layout_constraintTop_toBottomOf="@+id/view_line_top" />
+
+    <ImageView
+        android:id="@+id/iv_safety_center"
+        android:layout_width="24dp"
+        android:layout_height="24dp"
+        android:layout_marginStart="8dp"
+        android:src="@drawable/ic_safety_center"
+        app:layout_constraintStart_toStartOf="@+id/gl_start"
+        app:layout_constraintTop_toTopOf="@+id/tv_safety_center_title" />
+
+    <TextView
+        android:id="@+id/tv_safety_center_title"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="24dp"
+        android:fontFamily="@font/sf_pro_display_semibold"
+        android:text="@string/safetyCenterTitle"
+        android:textAppearance="@style/TextAppearance.MaterialComponents.Body2"
+        android:textColor="@color/colorTextPrimary"
+        app:layout_constraintEnd_toStartOf="@+id/gl_end"
+        app:layout_constraintStart_toEndOf="@+id/iv_safety_center"
+        app:layout_constraintTop_toBottomOf="@+id/tv_safety_toolkit_header" />
+
+    <TextView
+        android:id="@+id/tv_safety_center_description"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/sf_pro_display_regular"
+        android:text="@string/safetyCenterDescription"
+        android:textAppearance="@style/TextAppearance.MaterialComponents.Caption"
+        android:textColor="@color/colorTextPrimary"
+        app:layout_constraintEnd_toStartOf="@+id/gl_end"
+        app:layout_constraintStart_toStartOf="@+id/tv_safety_center_title"
+        app:layout_constraintTop_toBottomOf="@+id/tv_safety_center_title" />
+
+
+    <ImageView
+        android:id="@+id/iv_share_location"
+        android:layout_width="24dp"
+        android:layout_height="24dp"
+        android:layout_marginStart="8dp"
+        android:src="@drawable/ic_share_location"
+        app:layout_constraintStart_toStartOf="@+id/gl_start"
+        app:layout_constraintTop_toTopOf="@+id/tv_share_location_title" />
+
+    <TextView
+        android:id="@+id/tv_share_location_title"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="16dp"
+        android:fontFamily="@font/sf_pro_display_semibold"
+        android:text="@string/shareLocationTitle"
+        android:textAppearance="@style/TextAppearance.MaterialComponents.Body2"
+        android:textColor="@color/colorTextPrimary"
+        app:layout_constraintEnd_toStartOf="@+id/gl_end"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toEndOf="@+id/iv_safety_center"
+        app:layout_constraintTop_toBottomOf="@+id/tv_safety_center_description" />
+
+    <TextView
+        android:id="@+id/tv_share_location_description"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/sf_pro_display_regular"
+        android:text="@string/shareLocationDescription"
+        android:textAppearance="@style/TextAppearance.MaterialComponents.Caption"
+        android:textColor="@color/colorTextPrimary"
+        app:layout_constraintEnd_toStartOf="@+id/gl_end"
+        app:layout_constraintStart_toStartOf="@+id/tv_safety_center_title"
+        app:layout_constraintTop_toBottomOf="@+id/tv_share_location_title" />
+
+
+    <ImageView
+        android:id="@+id/iv_report_safety_issue"
+        android:layout_width="24dp"
+        android:layout_height="24dp"
+        android:layout_marginStart="8dp"
+        android:src="@drawable/ic_report_safety_issue"
+        app:layout_constraintStart_toStartOf="@+id/gl_start"
+        app:layout_constraintTop_toTopOf="@+id/tv_report_safety_issue_title" />
+
+    <TextView
+        android:id="@+id/tv_report_safety_issue_title"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="16dp"
+        android:fontFamily="@font/sf_pro_display_semibold"
+        android:text="@string/reportSafetyIssueTitle"
+        android:textAppearance="@style/TextAppearance.MaterialComponents.Body2"
+        android:textColor="@color/colorTextPrimary"
+        app:layout_constraintEnd_toStartOf="@+id/gl_end"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toEndOf="@+id/iv_safety_center"
+        app:layout_constraintTop_toBottomOf="@+id/tv_share_location_description" />
+
+    <TextView
+        android:id="@+id/tv_report_safety_issue_description"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/sf_pro_display_regular"
+        android:text="@string/reportSafetyIssueDescription"
+        android:textAppearance="@style/TextAppearance.MaterialComponents.Caption"
+        android:textColor="@color/colorTextPrimary"
+        app:layout_constraintEnd_toStartOf="@+id/gl_end"
+        app:layout_constraintStart_toStartOf="@+id/tv_safety_center_title"
+        app:layout_constraintTop_toBottomOf="@+id/tv_report_safety_issue_title" />
+
+
+    <ImageView
+        android:id="@+id/iv_call_assistance"
+        android:layout_width="24dp"
+        android:layout_height="24dp"
+        android:layout_marginStart="8dp"
+        android:src="@drawable/ic_call_assistance"
+        app:layout_constraintStart_toStartOf="@+id/gl_start"
+        app:layout_constraintTop_toTopOf="@+id/tv_call_assistance_title" />
+
+    <TextView
+        android:id="@+id/tv_call_assistance_title"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="16dp"
+        android:fontFamily="@font/sf_pro_display_semibold"
+        android:text="@string/callAssistanceTitle"
+        android:textAppearance="@style/TextAppearance.MaterialComponents.Body2"
+        android:textColor="@color/colorTextPrimary"
+        app:layout_constraintEnd_toStartOf="@+id/gl_end"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toEndOf="@+id/iv_safety_center"
+        app:layout_constraintTop_toBottomOf="@+id/tv_report_safety_issue_description" />
+
+    <TextView
+        android:id="@+id/tv_call_assistance_description"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/sf_pro_display_regular"
+        android:text="@string/callAssistanceDescription"
+        android:textAppearance="@style/TextAppearance.MaterialComponents.Caption"
+        android:textColor="@color/colorTextPrimary"
+        app:layout_constraintEnd_toStartOf="@+id/gl_end"
+        app:layout_constraintStart_toStartOf="@+id/tv_safety_center_title"
+        app:layout_constraintTop_toBottomOf="@+id/tv_call_assistance_title" />
+
+
+    <Button
+        android:id="@+id/bt_got_it"
+        android:layout_width="0dp"
+        android:layout_height="60dp"
+        android:layout_marginTop="44dp"
+        android:layout_marginBottom="24dp"
+        android:fontFamily="@font/sf_pro_display_bold"
+        android:text="@string/gotIt"
+        android:textAppearance="@style/TextAppearance.MaterialComponents.Body2"
+        android:textColor="@color/colorWhite"
+        app:backgroundTint="@color/colorPrimary"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/gl_end"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/gl_start"
+        app:layout_constraintTop_toBottomOf="@+id/tv_call_assistance_description"
+        app:shapeAppearance="@style/ShapeAppearance.App.SmallComponents_round_12" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/gl_start"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_begin="16dp" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/gl_end"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_end="16dp" />
+
+    <androidx.constraintlayout.widget.Group
+        android:id="@+id/gp_safety_center"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:constraint_referenced_ids="tv_safety_center_title,tv_safety_center_description,iv_safety_center" />
+
+    <androidx.constraintlayout.widget.Group
+        android:id="@+id/gp_share_location"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:constraint_referenced_ids="iv_share_location,tv_share_location_title,tv_share_location_description" />
+
+    <androidx.constraintlayout.widget.Group
+        android:id="@+id/gp_report_safety_issue"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:constraint_referenced_ids="iv_report_safety_issue,tv_report_safety_issue_title,tv_report_safety_issue_description" />
+
+    <androidx.constraintlayout.widget.Group
+        android:id="@+id/gp_call_assistance"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:constraint_referenced_ids="iv_call_assistance,tv_call_assistance_title,tv_call_assistance_description" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

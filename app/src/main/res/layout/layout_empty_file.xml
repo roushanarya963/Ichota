@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@color/colorWhite">
+
+
+    <TextView
+        android:id="@+id/tv_no_following"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/sf_pro_display_bold"
+        android:text="@string/nofollowing"
+        android:textAppearance="@style/TextAppearance.MaterialComponents.Headline4"
+        android:textColor="@color/exo_black_opacity_60"
+        android:visibility="visible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.23000002"
+        tools:ignore="MissingConstraints" />
+
+    <TextView
+        android:id="@+id/tv_no_following_desc"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:fontFamily="@font/sf_pro_display_medium"
+        android:gravity="center"
+        android:text="@string/go_exploresearchsomething"
+        android:visibility="visible"
+        app:layout_constraintEnd_toEndOf="@+id/tv_no_following"
+        app:layout_constraintStart_toStartOf="@+id/tv_no_following"
+        app:layout_constraintTop_toBottomOf="@+id/tv_no_following" />
+
+    <com.airbnb.lottie.LottieAnimationView
+        android:id="@+id/lottie_empty_file"
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+        android:layout_marginTop="16dp"
+        android:background="@drawable/ic_no_follower"
+        app:layout_constraintEnd_toEndOf="@+id/tv_no_following_desc"
+        app:layout_constraintHorizontal_bias="0.615"
+        app:layout_constraintStart_toStartOf="@+id/tv_no_following_desc"
+        app:layout_constraintTop_toBottomOf="@+id/tv_no_following_desc"
+        app:lottie_autoPlay="true"
+        app:lottie_loop="true"
+        tools:ignore="MissingConstraints" />
+</androidx.constraintlayout.widget.ConstraintLayout>
